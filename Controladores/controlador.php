@@ -1,6 +1,7 @@
 <?php
 
 #LLAMADA A LA PLANTILLA
+//se usa como el controlador de todo el proyecto
 
 
 class MVCcontrolador{
