@@ -23,7 +23,7 @@
 
   <body>
     <br><br>
-    <center><img src="badbunny_admin.png" width="50%"/></center>
+    <center><img src="Avatar.png" width="50%"/></center>
     <div class="container">
       <div class="card card-login mx-auto mt-5">
         <div class="card-header">Login</div>
