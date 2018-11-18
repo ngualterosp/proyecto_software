@@ -183,7 +183,7 @@ session_start();
 
 						<div id="segundaCapa">
 							<?php
-							        $conn = mysqli_connect("localhost","admin", "admin", "badbunny");
+							        $conn = mysqli_connect("localhost","root", "", "badbunny");
 				             // Check connection
 				                    if (!$conn) {
 				                    die("Connection failed: " . mysqli_connect_error());
