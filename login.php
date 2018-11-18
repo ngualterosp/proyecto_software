@@ -70,7 +70,7 @@
     function verificar_login($user,$password,&$result)  // COMPARAMOS SI EXISTE EL RESULTADO
     {
 
-    	$conn = mysqli_connect("localhost","admin", "admin", "badbunny");
+    	$conn = mysqli_connect("localhost","root", "", "badbunny");
     if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
