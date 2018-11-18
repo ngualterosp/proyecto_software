@@ -190,9 +190,11 @@ require_once("categoria.php");
 
 			if($producto->getCodigoGenero() == 0)
 			{
-            $actualizar=$db->prepare('UPDATE producto SET cod_categoria=:cod_categoria,nom_producto=:nom_producto,descripcion_producto=:descripcion_producto,ruta_imagen=:ruta_imagen  WHERE cod_producto=:cod_producto');
+            $actualizar=$db->prepare('UPDATE producto SET cod_categoria=:cod_categoria,nom_producto=:nom_producto,descripcion_producto=:descripcion_producto, valor_producto = :valor_producto,ruta_imagen=:ruta_imagen  WHERE cod_producto=:cod_producto');
             $actualizar->bindValue('cod_producto',$producto->getCodigoProducto());
 	        $actualizar->bindValue('cod_categoria',$producto->getCodigoCategoria());
+	        $actualizar->bindValue('valor_producto',$producto->getValor());
+
 			$actualizar->bindValue('nom_producto',$producto->getNombre());
             $actualizar->bindValue('descripcion_producto',$producto->getDescripcion());
 			$actualizar->bindValue('ruta_imagen',$producto->getRuta());
