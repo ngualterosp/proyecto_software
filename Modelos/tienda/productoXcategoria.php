@@ -114,12 +114,6 @@ $listaProductos=$crud->mostrarProductos($codigoAA);
             <span>Tienda</span>
           </a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="historiaAdmin.php">
-            <i class="fa fa-history"></i>
-            <span>Historia</span>
-          </a>
-        </li>
       </ul>
 
       <div id="content-wrapper">
