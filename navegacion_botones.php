@@ -7,22 +7,25 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#page-top">INICIO</a>
+          <a class="nav-link js-scroll-trigger fa fa-home" href="#page-top"> INICIO</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#noticias">NOTICIAS</a>
+          <a class="nav-link js-scroll-trigger fa fa-address-card" href="#noticias"> NOTICIAS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#giras">GIRAS</a>
+          <a class="nav-link js-scroll-trigger fa fa-plane" href="#giras"> GIRAS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#prensa">PRENSA</a>
+          <a class="nav-link js-scroll-trigger fa fa-microphone" href="#prensa"> PRENSA</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#historia">HISTORIA</a>
+          <a class="nav-link js-scroll-trigger fa fa-history" href="#historia"> HISTORIA</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#contact">CONTACTO</a>
+          <a class="nav-link js-scroll-trigger fa fa-phone" href="#contact"> CONTACTO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger fa fa-shopping-cart" href="/proyectsoftSantiParra/tiendaCliente.php"> TIENDA</a>
         </li>
       </ul>
     </div>

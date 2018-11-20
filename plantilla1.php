@@ -41,7 +41,7 @@
             <h1 class="text-uppercase">
               <strong>BAD BUNNY</strong>
             </h1>
-            <br><br><br>
+            <br>
           </div>
           <div class="col-lg-8 mx-auto">
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#noticias">Echa un vistazo!</a>
