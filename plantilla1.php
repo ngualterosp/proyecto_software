@@ -84,10 +84,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Bad Bunny
                   </div>
                   <div class="project-name">
-                    Project Name
+                    Ciudad de Puerto Rico
                   </div>
                 </div>
               </div>
@@ -99,10 +99,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Bad Bunny
                   </div>
                   <div class="project-name">
-                    Project Name
+                    Visita a USA por primera ves
                   </div>
                 </div>
               </div>
@@ -114,10 +114,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Bad Bunny
                   </div>
                   <div class="project-name">
-                    Project Name
+                    Tour por europa
                   </div>
                 </div>
               </div>
