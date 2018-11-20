@@ -54,7 +54,7 @@
       <div class="container">
         <div>
           <div>
-            <center><h2 class="section-heading text-white">ÚLTIMAS NOTICIAS</h2><br><br><br></center>
+            <center><h1 class="section-heading text-white">ÚLTIMAS NOTICIAS</h1><br><br><br></center>
             <?php
             require_once('noticiasCliente.php');
             ?>
@@ -68,48 +68,20 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading">La Nueva Religión Tour 2018</h2>
-            <hr class="my-4">
+            <h1 class="section-heading">Giras Mundiales</h1>
           </div>
         </div>
       </div>
       <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <img src="img/giras2.jpg" width="100%"/>
-              <h3 class="mb-3">MEDELLIN 15-SEP-2018</h3>
-              <p class="text-muted mb-0">El pueblo paisa reconocido por sus gustos hacie el reggaeton vivirán una noche inolvidable junto a Bad Bunny</p>
-
-
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <img src="img/giras1.jpg" width="100%"/>
-              <h3 class="mb-3">BOGOTA 26-OCT-2018</h3>
-              <p class="text-muted mb-0">El próximo viernes 26 de octubre 'El conejo malo' pondrá a vibrar la ciudad de Bogotá con sus canciones y éxtios más recientes</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <img src="img/giras3.jpg" width="100%"/>
-              <h3 class="mb-3">BARRANQUILLA 1 -NOV-2018</h3>
-              <p class="text-muted mb-0">Barranquilla al vibra del reggaeton retumbará en una noche deslumbrante con el conejo malo</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <img src="img/giras4.jpg" width="100%"/>
-              <h3 class="mb-3">CALI 03-NOV-2018</h3>
-              <p class="text-muted mb-0">El pueblo del valle contará con la presentación del artista más influyente de los últimos años, se presentará con los chicos de PISO21</p>
-            </div>
-          </div>
+        <div>
+          <?php
+          require_once('giras.php');
+          ?>
         </div>
       </div>
       <div>
-        <center>
-<a class="btn btn-light btn-xl sr-button" href="https://ticketshop.com.co/site/2018/08/13/nueva-religion-tour-2018-bad-bunny/" style="background=#FFFFFF">Compra tus entradas!</a>
+        <center><br><br>
+<a class="btn btn-primary btn-xl js-scroll-trigger" href="#prensa">SIGUIENTE</a>
 </center>
       </div>
     </section>
