@@ -70,8 +70,8 @@
           ?>
       <div>
         <center><br><br>
-<a class="btn btn-primary btn-xl js-scroll-trigger" href="#prensa">SIGUIENTE</a>
-</center>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#prensa">SIGUIENTE</a>
+        </center>
       </div>
     </section>
 

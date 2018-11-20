@@ -13,7 +13,7 @@
 
 <div class="w3-container">
   <center>
-  <h2>GIRAS Y EVENTOS PRÓXIMOS DE BAD BUNNY</h2>
+  <h2>GIRAS Y EVENTOS PRÓXIMOS DE BAD BUNNY</h2><br><br>
 </center>
 </div>
 
