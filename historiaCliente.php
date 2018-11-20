@@ -8,7 +8,6 @@
 <div class="w3-container">
   <div class="w3-card-4 text-light bg-dark" style="width:70%">
     <div class="w3-container">
-      <p><h1>Historia</h1></p>
       <hr>
       <img src="img/historia2.jpeg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:200px">
       <p align="justify">

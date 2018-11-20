@@ -28,7 +28,7 @@
 </textarea>
 
 </form>
-<a class="btn btn-primary btn-xl js-scroll-trigger">Enviar</a>
+<a class="btn btn-dark text-light btn-xl js-scroll-trigger">Enviar</a>
 
 
 <style>

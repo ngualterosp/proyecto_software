@@ -1,45 +1,43 @@
+<!DOCTYPE html>
 <html>
-<h2 class="section-heading" align=center>Éxitos Principales</h2>
-         <table>
-           <tr>
-             <td>
-               🔥Diles Remix (Arcángel, Ozuna, Ñengo Flow, Farruko)
-             </td>
-             <td>
-<a class="btn btn-primary  js-scroll-trigger" href="https://www.youtube.com/watch?v=UWV41yEiGq0">Reproducela!</a>
-             </td>
-           </tr>
-           <tr>
-<td>
-🔥Soy peor<br>
-</td>
-<td>
- <a class="btn btn-primary js-scroll-trigger" href="https://www.youtube.com/watch?v=ws00k_lIQ9U">Reproducela!</a>
-</td>
-           </tr>
-           <tr>
-<td>
- 🔥Amorfoda<br>
-</td>
-<td>
- <a class="btn btn-primary js-scroll-trigger" href="https://www.youtube.com/watch?v=kLpH1nSLJSs">Reproducela!</a>
-</td>
-           </tr>
-           <tr>
-<td>
- 🔥Si tu novio te deja Sola(ft J Balvin)<br>
-</td>
-<td>
- <a class="btn btn-primary  js-scroll-trigger" href="https://www.youtube.com/watch?v=Km4BayZykwE">Reproducela!</a>
-</td>
-           </tr>
-           <tr>
-             <td>
-                 🔥I Like It (Cardi B & J Balvin)<br>
-             </td>
-             <td>
- <a class="btn btn-primary js-scroll-trigger" href="https://www.youtube.com/watch?v=Yu_RKofJUH0">Reproducela!</a>
-             </td>
-           </tr>
-         </table>
-         </html>
+<body>
+<table>
+<tr><td colspan="2"><h2><center>Discografía</center></h2></td></tr>
+<tr>
+<td>Estamos Bien</td>
+<td><audio id="myAudio" controls>
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio><td>
+</tr>
+<tr>
+<td>Caballito MK</td>
+<td><audio id="myAudio" controls>
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio><td>
+</tr>
+<tr>
+<td>Caballito MK</td>
+<td><audio id="myAudio" controls>
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio><td>
+</tr>
+<tr>
+<td>Caballito MK</td>
+<td><audio id="myAudio" controls>
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio><td>
+</tr>
+<tr>
+<td>Caballito MK</td>
+<td><audio id="myAudio" controls>
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio><td>
+</tr>
+</table>
+</body>
+</html>

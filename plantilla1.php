@@ -140,6 +140,7 @@
       <div class="container">
         <center>
             <div>
+              <center><h1 class="section-heading text-dark">HISTORIA BADBUNNY</h1><br><br><br></center>
               <?php
               require_once('historiaCLiente.php');
               ?>
@@ -169,7 +170,7 @@
 
       <div>
         <center><br><br>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#contact">SIGUIENTE</a>
+          <a class="btn btn-dark text-light btn-xl js-scroll-trigger" href="#contact">SIGUIENTE</a>
         </center>
       </div>
 
