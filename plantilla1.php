@@ -142,7 +142,7 @@
           <div class="col-lg-8 mx-auto text-center">
             <div>
               <center>
-                <img src="img/historia2.jpeg" width="60%"/>
+                <img src="img/historia2.jpeg" class="w3-circle" alt="Alps" width="60%"/>
       </center>
             </div>
             <hr class="my-4">
