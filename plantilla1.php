@@ -65,20 +65,9 @@
     </section>
 
     <section id="giras">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h1 class="section-heading">Giras Mundiales</h1>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div>
           <?php
-          require_once('giras.php');
+          require_once('girasCliente.php');
           ?>
-        </div>
-      </div>
       <div>
         <center><br><br>
 <a class="btn btn-primary btn-xl js-scroll-trigger" href="#prensa">SIGUIENTE</a>
