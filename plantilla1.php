@@ -138,61 +138,22 @@
 
     <section id="historia">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <div>
-              <center>
-                <img src="img/historia2.jpeg" class="w3-circle" alt="Alps" width="60%"/>
-      </center>
-            </div>
-            <hr class="my-4">
-          </div>
-        </div>
         <center>
-          <p align=left>Nació en la ciudad de San Juan, Puerto Rico. Desde que tenía 5 años quiso ser cantante.​ Ocasio creció en las playas de Puerto Rico, en la comunidad de Vega Baja con sus padres y dos hermanos menores. Uno de sus primeros recuerdos es cuando recibió un álbum de Vico C para Navidad, y desde ahí comenzó a cantar, componer y producir, tenía 13 años. Entre quienes lo inspiran cuenta a Héctor Lavoe y Michael Jordan.</p>
-          <h2 class="section-heading" align=center>Éxitos Principales</h2>
-          <table>
-            <tr>
-              <td>
-                🔥Diles Remix (Arcángel, Ozuna, Ñengo Flow, Farruko)
-              </td>
-              <td>
-<a class="btn btn-primary  js-scroll-trigger" href="https://www.youtube.com/watch?v=UWV41yEiGq0">Reproducela!</a>
-              </td>
-            </tr>
-            <tr>
-<td>
-🔥Soy peor<br>
-</td>
-<td>
-  <a class="btn btn-primary js-scroll-trigger" href="https://www.youtube.com/watch?v=ws00k_lIQ9U">Reproducela!</a>
-</td>
-            </tr>
-            <tr>
-<td>
-  🔥Amorfoda<br>
-</td>
-<td>
-  <a class="btn btn-primary js-scroll-trigger" href="https://www.youtube.com/watch?v=kLpH1nSLJSs">Reproducela!</a>
-</td>
-            </tr>
-            <tr>
-<td>
-  🔥Si tu novio te deja Sola(ft J Balvin)<br>
-</td>
-<td>
-  <a class="btn btn-primary  js-scroll-trigger" href="https://www.youtube.com/watch?v=Km4BayZykwE">Reproducela!</a>
-</td>
-            </tr>
-            <tr>
-              <td>
-                  🔥I Like It (Cardi B & J Balvin)<br>
-              </td>
-              <td>
-  <a class="btn btn-primary js-scroll-trigger" href="https://www.youtube.com/watch?v=Yu_RKofJUH0">Reproducela!</a>
-              </td>
-            </tr>
-          </table>
+            <div>
+              <?php
+              require_once('historiaCLiente.php');
+              ?>
+            </div>
+        </center>
+      </div>
+
+      <div>
+        <center><br><br>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#contact">SIGUIENTE</a>
+        </center>
+      </div>
+
+
         </section>
 
     <section class="text-light bg-dark" id="contact">
