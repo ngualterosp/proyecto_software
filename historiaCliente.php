@@ -6,7 +6,7 @@
 <body>
 
 <div class="w3-container">
-  <div class="w3-card-4" style="width:70%">
+  <div class="w3-card-4 text-light bg-dark" style="width:70%">
     <div class="w3-container">
       <p><h1>Historia</h1></p>
       <hr>

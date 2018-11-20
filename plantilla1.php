@@ -144,6 +144,26 @@
               require_once('historiaCLiente.php');
               ?>
             </div>
+            <br>
+            <br>
+            <br>
+            <table>
+              <tr>
+                <td>
+                  <?php
+                  require_once('discografia.php');
+                  ?>
+                </td>
+                <td>
+<br>
+                </td>
+                <td>
+                  <?php
+                  require_once('calificacion.php');
+                  ?>
+                </td>
+              </tr>
+            </table>
         </center>
       </div>
 
