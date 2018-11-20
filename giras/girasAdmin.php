@@ -124,6 +124,12 @@ header("location:modificar.php?cod_noticia=");
             <span>Tienda</span>
           </a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="../live.php">
+            <i class="fa fa-video-camera"></i>
+            <span>Live</span>
+          </a>
+        </li>
       </ul>
 
       <div id="content-wrapper">
