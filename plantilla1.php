@@ -41,7 +41,7 @@
             <h1 class="text-uppercase">
               <strong>BAD BUNNY</strong>
             </h1>
-            <hr>
+            <br><br><br>
           </div>
           <div class="col-lg-8 mx-auto">
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#noticias">Echa un vistazo!</a>
@@ -52,53 +52,13 @@
 
     <section class="bg-primary" id="noticias">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">ÚLTIMAS NOTICIAS</h2>
-            <hr class="light my-4">
-
-            <script>
-
-var mydate=new Date();
-var year=mydate.getYear();
-if (year < 1000)
-year+=1900;
-var day=mydate.getDay();
-var month=mydate.getMonth()+1;
-if (month<10)
-month="0"+month;
-var daym=mydate.getDate();
-if (daym<10)
-daym="0"+daym;
-document.write("<Large><font color='000000' face='impact'><b>Fecha Actual: "+daym+"/"+month+"/"+year+"</b></font></large>")
-
-</script>
-            <table>
-              <tr>
-                  <td> <img src="img/noticia1.jpg" width="100%"/> </td>
-                  <td><p class="text-faded mb-4"><b>El rapero Bad Bunny sufre aparatosa caída en Panamá</b><br>
-El rapero puertorriqueño Bad Bunny tuvo que ser sacado en ambulancia, en medio de un concierto en Ciudad de Panamá, la madrugada de este domingo, luego de caer de la tarima sobre la que actuaba.
-</p>
-</td>
-              </tr>
-
-              <tr>
-                  <td><p class="text-faded mb-4"><b>Bad Bunny, convertido en un ‘conejo millonario’ gracias a su tour ‘Nueva Religión’</b><br>
-El cantante del género urbano ha recaudado aproximadamente 16 millones de dólares por los conciertos que ha realizado en varios países del mundo durante el 2018.
-</p>
-</td>
-<td> <img src="img/noticia2.jpg" width="80%"/> </td>
-              </tr>
-
-              <tr>
-                  <td> <img src="img/noticia3.jpg" width="100%"/> </td>
-                  <td><p class="text-faded mb-4"><b>Bad Bunny se pinta las uñas y recibe insultos homofóbicos</b><br>
-El reggaetonero Bad Bunny recibe todo tipo de insultos en Instagram por pintarse las uñas, en sus últimos videos y canciones aparece con las uñas pintadas de diferentes colores. Internautas se enfrentan por estereotipos.
-</p>
-</td>
-              </tr>
-            </table>
-            <br><br><a class="btn btn-light btn-xl js-scroll-trigger" href="#giras">SIGUIENTE</a>
+        <div>
+          <div>
+            <center><h2 class="section-heading text-white">ÚLTIMAS NOTICIAS</h2><br><br><br></center>
+            <?php
+            require_once('noticiasCliente.php');
+            ?>
+            <center><br><br><a class="btn btn-light btn-xl js-scroll-trigger" href="#giras">SIGUIENTE</a></center>
           </div>
         </div>
       </div>
@@ -279,7 +239,6 @@ El reggaetonero Bad Bunny recibe todo tipo de insultos en Instagram por pintarse
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Sígueme en las redes sociales!</h2>
-            <hr class="my-4">
             <p class="mb-5">Noticias diarias, fotos, vídeos y contenido exclusivo sólo en las redes sociales, SÍGUEME</p>
           </div>
         </div>
