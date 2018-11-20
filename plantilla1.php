@@ -159,6 +159,21 @@
 <br>
                 </td>
                 <td>
+<br>
+                </td>
+                <td>
+<br>
+                </td>
+                <td>
+<br>
+                </td>
+                <td>
+<br>
+                </td>
+                <td>
+<br>
+                </td>
+                <td>
                   <?php
                   require_once('calificacion.php');
                   ?>

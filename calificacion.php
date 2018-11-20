@@ -11,7 +11,7 @@
 <center>
   <h2 class="section-heading" align=center>Calificación y comentarios</h2>
 
-<form>
+<form id="form_35166" class="appnitro"  method="post" action="">
   <p class="clasificacion" >
     <input id="radio1" type="radio" name="estrellas" value="5"><!--
     --><label for="radio1" >★</label><!--
@@ -24,13 +24,44 @@
     --><input id="radio5" type="radio" name="estrellas" value="1"><!--
     --><label for="radio5">★</label>
   </p>
-  <textarea rows="4" cols="40" placeholder="Deja tu comentario para BadBunny...">
-</textarea>
-
-</form>
+  <div>
+    <textarea id="comentario" name="comentario" placeholder="Deja un comentario a BadBunny..." class="element textarea medium form-control"
+    required rows=5 cols=20></textarea>
+  </div>
 <br><br>
-<a class="btn btn-dark text-light btn-xl js-scroll-trigger">Enviar</a>
 
+<input class="btn btn-dark text-light btn-xl js-scroll-trigger"
+ id="saveForm" type="submit" name="submit" value="Enviar" href="#historia"/>
+</form>
+
+<div id="segundaCapa">
+  <?php
+          $conn = mysqli_connect("localhost","root", "", "badbunny");
+         // Check connection
+                if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error());
+                }
+
+                if(isset($_POST['comentario']))
+                {
+                      $comentarioVar=$_POST['comentario'];
+                 $sql = "INSERT into comentario(DES_COMENTARIO) values ('$comentarioVar')";
+
+                      if($conn->query($sql) == true)
+                      {
+                        echo "Tu comentario fue enviado correctamente";
+                      }
+                      else
+                      {
+                        echo $cod_admin;
+                        echo "Error";
+                      }
+
+                }
+
+  ?>
+
+</div>
 
 <style>
 label{ color:grey;}
