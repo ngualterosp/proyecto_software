@@ -2,6 +2,8 @@
 // incluye la clase Db
 require_once('conexion.php');
 require_once("gira.php");
+require_once("pais.php");
+require_once("ciudad.php");
 
 	class CrudGira{
 		// constructor de la clase
@@ -46,9 +48,20 @@ require_once("gira.php");
 		// método para eliminar una noticia, recibe como parámetro el id de la noticia
 		public function eliminar($codigoGira){
 			$db=Db::conectar();
+			$eliminarEventos = $db->prepare('DELETE FROM evento where cod_gira=:cod_gira');
+			$eliminarEventos->bindValue('cod_gira', $codigoGira);
+			$eliminarEventos->execute();
 			$eliminar=$db->prepare('DELETE FROM gira WHERE cod_gira=:elCodigo');
 			$eliminar->bindValue('elCodigo',$codigoGira);
 			$eliminar->execute();
+		}
+
+		public function eliminarEvento($codEvento)
+		{
+			$db = Db::conectar();
+			$eliminar = $db->prepare('DELETE FROM evento where cod_evento=:cod_evento');
+		    $eliminar->bindValue('cod_evento', $codEvento);
+		    $eliminar->execute();
 		}
 
 		// método para buscar una noticia, recibe como parámetro el id de la noticia
@@ -79,6 +92,123 @@ require_once("gira.php");
 
 			
 			$actualizar->execute();
+		}
+
+		public function actualizarEvento($evento)
+		{
+			$db = Db::conectar();
+			$actualizar = $db->prepare('UPDATE evento set  cod_gira =:cod_gira, cod_ciudad =:cod_ciudad, nom_evento=:nom_evento, descripcion_evento=:descripcion_evento, fecha_evento=:fecha_evento');
+			$actualizar->bindValue('cod_gira', $evento->getCodigoGira());
+			$actualizar->bindValue('cod_ciudad', $evento->getCodigoCiudad());
+			$actualizar->bindValue('nom_evento', $evento->getNombre());
+			$actualizar->bindValue('descripcion_evento', $evento->getDescripcion());
+			$actualizar->bindValue('fecha_evento', $evento->getFecha());
+			$actualizar->execute();
+		}
+
+		public function insertarEvento($evento)
+		{
+			$db = Db::conectar();
+			$insert = $db->prepare('INSERT INTO evento(cod_gira, cod_ciudad, nom_evento, descripcion_evento) values(:cod_gira, :cod_ciudad, :nom_evento,:descripcion_evento)');
+			
+			$insert->bindValue('cod_gira',$evento->getCodigoGira());
+			$insert->bindValue('cod_ciudad',$evento->getCodigoCiudad());
+			$insert->bindValue('nom_evento',$evento->getNombre());
+			$insert->bindValue('descripcion_evento',$evento->getDescripcion());
+			
+
+			$insert->execute();
+		}
+
+		public function mostrarEventos($codigoGira)
+		{
+			$db=Db::conectar();
+			$listaEventos=[];
+			$select =$db->prepare('SELECT * from evento where cod_gira=:cod_gira');
+			$select->bindValue('cod_gira', $codigoGira);
+			$select->execute();
+			foreach($select->fetchAll() as $evento){
+
+
+				$elEvento= new Evento();
+				$elEvento->setCodigoEvento($evento['cod_evento']);
+				$elEvento->setCodigoGira($evento['cod_gira']);
+				$elEvento->setCodigoCiudad($evento['cod_ciudad']);
+				$elEvento->setNombre($evento['nom_evento']);
+				$elEvento->setDescripcion($evento['descripcion_evento']);
+			    $elEvento->setFecha($evento['fecha_evento']);
+			    
+
+				$listaEventos[]=$elEvento;
+			}
+			return $listaEventos;
+		}
+
+		public function obtenerEvento($codEvento)
+		{
+			$db = Db::conectar();
+			$select = $db->prepare('SELECT * from evento where cod_evento =:cod_evento');
+			$select->bindValue('cod_evento', $codEvento);
+			$select->execute();
+			$registro = $select->fetch();
+			$elEvento = new Evento();
+			$elEvento->setCodigoEvento($registro['cod_evento']);
+			$elEvento->setCodigoGira($registro['cod_gira']);
+			$elEvento->setCodigoCiudad($registro['cod_ciudad']);
+			$elEvento->setNombre($registro['nom_evento']);
+			$elEvento->setDescripcion($registro['descripcion_evento']);
+			$elEvento->setFecha($registro['fecha_evento']);
+
+			return $elEvento;
+		}
+
+		public function listarCiudades()
+		{
+			$listaCiudades=[];
+			$db = Db::conectar();
+			$select = $db->prepare('SELECT * from ciudad');
+			$select->execute();
+			foreach ($select->fetchAll() as $registroCiudad) 
+			{
+				$laCiudad = new Ciudad();
+				$laCiudad->setCodigoCiudad($registroCiudad['cod_ciudad']);
+				$laCiudad->setCodigoPais($registroCiudad['cod_pais']);
+				$laCiudad->setNombre($registroCiudad['nom_ciudad']);
+				$listaCiudades[]= $laCiudad;
+			}
+			return $listaCiudades;
+		}
+
+		public function obtenerPais($codCiudad)
+		{
+			$db=Db::conectar();
+			$select = $db->prepare('SELECT pais.cod_pais, pais.nom_pais from pais, ciudad where pais.cod_pais = ciudad.cod_pais AND ciudad.cod_ciudad = :cod_ciudad');
+			$select->bindValue('cod_ciudad', $codCiudad);
+			$select->execute();
+
+			$registro = $select->fetch();
+			$pais = new Pais();
+			$pais->setCodigoPais($registro['cod_pais']);
+			$pais->setNombre($registro['nom_pais']);
+			return $pais;
+
+		}
+
+		public function obtenerCiudad($codigoCiudad)
+		{
+			$db=Db::conectar();
+			$select = $db->prepare('SELECT * from ciudad where cod_ciudad =:cod_ciudad');
+			$select->bindValue('cod_ciudad', $codigoCiudad);
+			$select->execute();
+
+			$registro = $select->fetch();
+			$ciudad = new Ciudad();
+			$ciudad->setCodigoCiudad($registro['cod_ciudad']);
+			$ciudad->setCodigoPais($registro['cod_pais']);
+			$ciudad->setNombre($registro['nom_ciudad']);
+
+			return $ciudad;
+
 		}
 	}
 ?>

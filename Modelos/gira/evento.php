@@ -32,16 +32,25 @@ class Evento{
 
   	public function setCodigoGira($nuevoCodGira)
   	{
-  		 $this->cod_gira = $nuevoCodGira
+  		 $this->cod_gira = $nuevoCodGira;
   	}
+    public function getCodigoCiudad()
+    {
+      return $this->cod_ciudad;
+    }
+
+    public function setCodigoCiudad($nuevoCodCiudad)
+    {
+       $this->cod_ciudad = $nuevoCodCiudad;
+    }
 
 
-  	public function getNomEvento()
+  	public function getNombre()
   	{
   		return $this->nom_evento;
   	}
 
-  	public function setNomEvento($nuevoNom)
+  	public function setNombre($nuevoNom)
   	{
   		$this->nom_evento = $nuevoNom;
   	}

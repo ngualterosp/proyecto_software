@@ -158,6 +158,7 @@ header("location:modificar.php?cod_noticia=");
               <th>Fecha Inicio</th>
               <th>Modificar</th>
               <th>Eliminar</th>
+              <th>Eventos Asociados</th>
         		</tr>
         		</thead>
 
@@ -169,6 +170,7 @@ header("location:modificar.php?cod_noticia=");
             <td><?php echo $gira->getFecha() ?></td>
             <td><a  class="btn btn-primary" href="../Modelos/gira/actualizar.php?cod_gira=<?php echo $gira->getCodigoGira() ?>&accion=a">Modificar</a></td>
             <td><a  class="btn btn-primary " href="../Modelos/gira/administrar_gira.php?cod_gira=<?php echo $gira->getCodigoGira()?>&accion=e" />Eliminar</td>
+            <td><a  class="btn btn-primary " href="../Modelos/gira/eventosXgira.php?cod_gira=<?php echo $gira->getCodigoGira()?>" />Eventos Asociados</td>
         </tr>
         <?php
           }
