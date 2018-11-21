@@ -5,7 +5,7 @@
   <title>indez</title>
 </head>
 <body>
-  <form action="subirImagen.php" method="post" enctype="multipart/form-data">
+  <form action="ZuploadPRUEBA.php" method="post" enctype="multipart/form-data">
     <input type="file" name="image"/>
     <input type="submit" name="submit" value="Subir Imagen"/>
   </form>

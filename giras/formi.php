@@ -140,11 +140,17 @@ session_start();
 			<textarea id="entrada" placeholder="Descripción de la gira" required name="descripcion_gira" class="element textarea medium form-control"></textarea>
 		</div>
 		</li>
+    <li>
+      <div>
+        <?php include("indexImagen.php"); ?>
+      </div>
+    </li>
 
 
 			    <input type="hidden" name="form_id" value="35166" />
 
-				<center><input id="saveForm" class="btn btn-primary" type="submit" name="insert" value="Agregar" />
+          <input type="submit" name="submit" value="Agregar" id="saveForm" class="btn btn-primary"/>
+				<!-- <center><input id="saveForm" class="btn btn-primary" type="submit" name="insert" value="Agregar" /> -->
         <a href="girasAdmin.php"> Volver </a></center>
 		</ul>
 		</form>
