@@ -97,12 +97,13 @@ require_once("ciudad.php");
 		public function actualizarEvento($evento)
 		{
 			$db = Db::conectar();
-			$actualizar = $db->prepare('UPDATE evento set  cod_gira =:cod_gira, cod_ciudad =:cod_ciudad, nom_evento=:nom_evento, descripcion_evento=:descripcion_evento, fecha_evento=:fecha_evento');
+			$actualizar = $db->prepare('UPDATE evento set  cod_gira =:cod_gira, cod_ciudad =:cod_ciudad, nom_evento=:nom_evento, descripcion_evento=:descripcion_evento, fecha_evento=:fecha_evento WHERE cod_evento =:cod_evento');
 			$actualizar->bindValue('cod_gira', $evento->getCodigoGira());
 			$actualizar->bindValue('cod_ciudad', $evento->getCodigoCiudad());
 			$actualizar->bindValue('nom_evento', $evento->getNombre());
 			$actualizar->bindValue('descripcion_evento', $evento->getDescripcion());
 			$actualizar->bindValue('fecha_evento', $evento->getFecha());
+			$actualizar->bindValue('cod_evento', $evento->getCodigoEvento());
 			$actualizar->execute();
 		}
 
