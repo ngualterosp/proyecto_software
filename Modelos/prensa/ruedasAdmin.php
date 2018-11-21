@@ -1,17 +1,18 @@
 
-<?php
-session_start();
+  <?php
 require_once "../gira/conexion.php";
-require_once "../gira/crud_gira.php";
-require_once "../gira/evento.php";
-require_once "../gira/gira.php";
+require_once "RuedaPrensa.php";
+require_once "crud_prensa.php";
 require_once "../gira/ciudad.php";
-$crud = new CrudGira();
-$listaCiudades = $crud->listarCiudades();
-$gira = new Gira();
-$gira = $crud->obtenerGira($_GET['cod_gira']);
+require_once "../gira/pais.php";
+require_once "../gira/crud_gira.php";
 
 
+$crud=new CrudPrensa();
+$crudGira=new CrudGira();
+$ciudad = new Ciudad();
+$pais = new Pais();
+$listaRuedas=$crud->mostrarRuedas();
 
 
 ?>
@@ -21,10 +22,6 @@ $gira = $crud->obtenerGira($_GET['cod_gira']);
 
   <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="view.css" media="all">
-    <script type="text/javascript" src="view.js"></script>
-    <script type="text/javascript" src="calendar.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -53,7 +50,7 @@ $gira = $crud->obtenerGira($_GET['cod_gira']);
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="../inicioAdmin.php">🐰 BadBunny 🐰</a>
+      <a class="navbar-brand mr-1" href="../../inicioAdmin.php">🐰 BadBunny 🐰</a>
 
 
 
@@ -77,7 +74,7 @@ $gira = $crud->obtenerGira($_GET['cod_gira']);
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="../index.php">Cerrar Sesion</a>
+            <a class="dropdown-item" href="../../index.php">Cerrar Sesion</a>
           </div>
         </li>
       </ul>
@@ -89,31 +86,31 @@ $gira = $crud->obtenerGira($_GET['cod_gira']);
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="../inicioAdmin.php">
+          <a class="nav-link" href="../../inicioAdmin.php">
             <i class="fa fa-home"></i>
             <span>Inicio</span>
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../noticias/noticiasAdmin.php">
+          <a class="nav-link" href="../../noticias/noticiasAdmin.php">
             <i class="fa fa-newspaper-o"></i>
             <span>Noticias</span>
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../giras/girasAdmin.php">
+          <a class="nav-link" href="../../giras/girasAdmin.php">
             <i class="fa fa-plane"></i>
             <span>Giras</span>
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../prensas/prensaAdmin.php">
+          <a class="nav-link" href="../../prensas/prensaAdmin.php">
             <i class="fa fa-microphone"></i>
             <span>Rueda de prensa</span>
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../Modelos/tienda/tiendaAdmin.php">
+          <a class="nav-link" href="tiendaAdmin.php">
             <i class="fa fa-shopping-cart"></i>
             <span>Tienda</span>
           </a>
@@ -123,77 +120,65 @@ $gira = $crud->obtenerGira($_GET['cod_gira']);
       <div id="content-wrapper">
 
 
+<form action="" method="get">
+       <a class= "btn btn-primary" href="insertar_prensa.php">Insertar Rueda de Prensa</a>
+       <a  class="btn btn-primary" >Ruedas de Prensa</a>
 
 
-        <img id="top" src="top.png" alt="">
-  <div id="form_container">
 
-    <h1><a>Insertar Evento</a></h1>
-    <form id="form_35166" class="appnitro"  method="post" action="acciones_giras.php">
-          <div class="form_description">
-      <h2>Insertar Evento</h2>
-      <p></p>
-    </div>
-      <ul >
+
+       <br></br>
+        <table class="table table-striped">
+
+            <thead>
+            <tr>
+              <th>Pais</th>
+              <th>Ciudad</th>
+              <th>Fecha de Rueda</th>
+              <th>Lugar</th>
+              <th>Descripcion</th>
+              <th>Modificar</th>
+              <th>Eliminar</th>
+            </tr>
+            </thead>
+
+
+         <?php foreach ($listaRuedas as $rueda){
+
+          $ciudad = $crudGira->obtenerCiudad($rueda->getCodigoCiudad());
+          $pais = $crudGira->obtenerPais($rueda->getCodigoCiudad());
+
+
+
+
+
+        // aca puedes hacer la consulta e iterarla con each. ?>
+        <tr>
          
-         <input type="hidden" name="cod_gira" value='<?php echo $gira->getCodigoGira() ?>'>
-        <li id="li_2">
-      <label class="description" for="cod_ciudad">Ciudad </label>
-      <div>
-    <select name="cod_ciudad">
-      <option selected value="0"> Elige una opción / conservar </option>
-          <?php
-
-          foreach ($listaCiudades as $ciudad)
-          {
+          <td><?php echo $pais->getNombre() ?></td>
+          <td><?php echo $ciudad->getNombre() ?></td>
+          <td><?php echo $rueda->getFecha() ?></td>
+          <td><?php echo $rueda->getLugar() ?></td>
+          <td><?php echo $rueda->getDescripcion() ?></td>
+          
           
 
-            ?>
 
 
 
-         <option value="<?php echo $ciudad->getCodigoCiudad()?>"><?php echo $ciudad->getNombre() ?></option>
-
-            <?php
+            <td><a  class="btn btn-primary" href="actualizar_prensa.php?cod_rueda_prensa=<?php echo $rueda->getCodigoRuedaPrensa() ?>">Modificar</a></td>
+            <td><a  class="btn btn-primary" href="acciones_prensa.php?cod_rueda_prensa=<?php echo $rueda->getCodigoRuedaPrensa() ?>&accion=e">Eliminar</a></td>
+        </tr>
+        <?php
           }
+        ?>
 
 
 
-           ?>
-    </select>
-    </div>
-    </li>
-
-          <li id="li_1" >
-    <label class="description" for="nom_evento">Nombre Evento</label>
-    <div>
-      <input id="nom_evento" placeholder="Nombre Evento" required name="nom_evento" class="element text medium form-control" type="text" maxlength="255" value=""/>
-    </div>
-    </li>       <li id="li_3" >
-    <label class="description" for="descripcion_evento">Descripcion Evento </label>
-    <div>
-      <textarea id="descripcion_evento" placeholder="Descripción del Evento" required name="descripcion_evento" class="element textarea medium form-control"></textarea>
-    </div>
-    </li>
-
-
-          <input type="hidden" name="form_id" value="35166" />
-
-        <center><input id="saveForm" class="btn btn-primary" type="submit" name="insertarEvento" value="Agregar" />
-        <a href="../../giras/girasAdmin.php"> Volver </a></center>
-    </ul>
+      </table>
     </form>
 
-    <div id="segundaCapa">
 
-
-
-    </div>
-    <div id="footer">
-
-    </div>
-  </div>
-  <img id="bottom" src="bottom.png" alt="">
 
 
         <!-- /.container-fluid -->
@@ -240,23 +225,23 @@ $gira = $crud->obtenerGira($_GET['cod_gira']);
 
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../vendor1/jquery/jquery.min.js"></script>
-    <script src="../vendor1/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../vendor1/jquery/jquery.min.js"></script>
+    <script src="../../vendor1/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../vendor1/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../../vendor1/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Page level plugin JavaScript-->
-    <script src="../vendor1/chart.js/Chart.min.js"></script>
-    <script src="../vendor1/datatables/jquery.dataTables.js"></script>
-    <script src="../vendor1/datatables/dataTables.bootstrap4.js"></script>
+    <script src="../../vendor1/chart.js/Chart.min.js"></script>
+    <script src="../../vendor1/datatables/jquery.dataTables.js"></script>
+    <script src="../../vendor1/datatables/dataTables.bootstrap4.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../js/sb-admin.min.js"></script>
+    <script src="../../js/sb-admin.min.js"></script>
 
     <!-- Demo scripts for this page-->
-    <script src="../js/demo/datatables-demo.js"></script>
-    <script src="../js/demo/chart-area-demo.js"></script>
+    <script src="../../js/demo/datatables-demo.js"></script>
+    <script src="../../js/demo/chart-area-demo.js"></script>
 
   </body>
 
