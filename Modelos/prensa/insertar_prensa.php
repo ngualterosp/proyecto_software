@@ -3,14 +3,11 @@
 session_start();
 require_once "../gira/conexion.php";
 require_once "../gira/crud_gira.php";
-require_once "../gira/evento.php";
-require_once "../gira/gira.php";
 require_once "../gira/ciudad.php";
-$crud = new CrudGira();
-$listaCiudades = $crud->listarCiudades();
-$gira = new Gira();
-$gira = $crud->obtenerGira($_GET['cod_gira']);
 
+$crudGira = new CrudGira();
+$ciudad = new Ciudad();
+$listaCiudades = $crudGira->listarCiudades();
 
 
 
@@ -128,20 +125,20 @@ $gira = $crud->obtenerGira($_GET['cod_gira']);
         <img id="top" src="top.png" alt="">
   <div id="form_container">
 
-    <h1><a>Insertar Evento</a></h1>
-    <form id="form_35166" class="appnitro"  method="post" action="acciones_giras.php">
+    <h1><a>Insertar Rueda de prensa</a></h1>
+    <form id="form_35166" class="appnitro"  method="post" action="acciones_prensa.php">
           <div class="form_description">
-      <h2>Insertar Evento</h2>
+      <h2>Insertar Rueda de Prensa</h2>
       <p></p>
     </div>
       <ul >
          
-         <input type="hidden" name="cod_gira" value='<?php echo $gira->getCodigoGira() ?>'>
+         
         <li id="li_2">
       <label class="description" for="cod_ciudad">Ciudad </label>
       <div>
     <select name="cod_ciudad">
-      <option selected value="0"> Elige una opción / conservar </option>
+      <option selected value="<?php echo $ciudad->getCodigoCiudad()?>"> Elige una opción / conservar </option>
           <?php
 
           foreach ($listaCiudades as $ciudad)
@@ -165,21 +162,21 @@ $gira = $crud->obtenerGira($_GET['cod_gira']);
     </li>
 
           <li id="li_1" >
-    <label class="description" for="nom_evento">Nombre Evento</label>
+    <label class="description" for="lugar_rueda">Lugar Rueda</label>
     <div>
-      <input id="nom_evento" placeholder="Nombre Evento" required name="nom_evento" class="element text medium form-control" type="text" maxlength="255" value=""/>
+      <input id="lugar_rueda" placeholder="Lugar" required name="lugar_rueda" class="element text medium form-control" type="text" maxlength="255" value=""/>
     </div>
     </li>       <li id="li_3" >
-    <label class="description" for="descripcion_evento">Descripcion Evento </label>
+    <label class="description" for="descripcion_rueda">Descripcion Rueda </label>
     <div>
-      <textarea id="descripcion_evento" placeholder="Descripción del Evento" required name="descripcion_evento" class="element textarea medium form-control"></textarea>
+      <textarea id="descripcion_rueda" placeholder="Descripción de la Rueda" required name="descripcion_rueda" class="element textarea medium form-control"></textarea>
     </div>
     </li>
 
 
           <input type="hidden" name="form_id" value="35166" />
 
-        <center><input id="saveForm" class="btn btn-primary" type="submit" name="insertarEvento" value="Agregar" />
+        <center><input id="saveForm" class="btn btn-primary" type="submit" name="insertarRueda" value="Agregar" />
         <a href="../../giras/girasAdmin.php"> Volver </a></center>
     </ul>
     </form>
