@@ -130,7 +130,10 @@
       <?php
       require_once('ruedaCliente.php');
       ?>
+
+      <center><br><br><a class="btn btn-light btn-xl js-scroll-trigger" href="#historia">SIGUIENTE</a></center>
     </section>
+
 
     <section id="historia">
       <div class="container">
