@@ -25,7 +25,7 @@
           <a class="nav-link js-scroll-trigger fa fa-phone" href="#contact"> CONTACTO</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger fa fa-shopping-cart" href="tiendaCliente.php"> TIENDA</a>
+          <a class="nav-link js-scroll-trigger fa fa-shopping-cart" href="./Modelos/tienda/tiendaCliente.php"> TIENDA</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger 	fa fa-camera" href="liveCliente.php"> LIVE</a>
