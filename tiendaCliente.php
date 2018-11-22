@@ -28,14 +28,6 @@ body, html {height: 100%}
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="index.php" class="w3-bar-item w3-button w3-padding-large fa fa-home">  Inicio</a>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button fa fa-shopping-cart" title="More">  Productos <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <?php foreach ($link->query('SELECT * from categoria') as $row){ // aca puedes hacer la consulta e iterarla con each. ?>
-        <a class="w3-bar-item w3-button"><?php echo $row['nom_categoria'] ?> <i class="	fa fa-mail-forward"></i></a>
-        <?php } ?>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -44,19 +36,14 @@ body, html {height: 100%}
 <br><br><br><br><br>
 <div class="w3-row-padding">
 
-<?php foreach ($link->query('SELECT * from producto ORDER BY cod_producto DESC') as $row1){ // aca puedes hacer la consulta e iterarla con each. ?>
+<?php foreach ($link->query('SELECT * from categoria') as $row1){ // aca puedes hacer la consulta e iterarla con each. ?>
 
 <div class="w3-third w3-margin-bottom">
   <ul class="w3-ul w3-border w3-center w3-hover-shadow">
-    <li class="w3-black w3-xlarge w3-padding-32"><?php echo $row1['nom_producto'] ?></li>
+    <li class="w3-black w3-xlarge w3-padding-32"><?php echo $row1['nom_categoria'] ?></li>
     <li class="w3-padding-16">imagen</li>
-    <li class="w3-padding-16"><?php echo $row1['descripcion_producto'] ?></li>
-    <li class="w3-padding-16">Cantidad: <input type="number" name="quantity" min="1" max="5"></li>
-    <li class="w3-padding-16">
-      <h2 class="w3-wide">$<?php echo $row1['valor_producto'] ?></h2>
-    </li>
     <li class="w3-light-grey w3-padding-24">
-      <button class="w3-button w3-blue-grey w3-padding-large">Comprar</button>
+      <button class="w3-button w3-blue-grey w3-padding-large">Observar Productos</button>
     </li>
   </ul>
 </div>
