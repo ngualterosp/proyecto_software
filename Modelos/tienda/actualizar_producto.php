@@ -177,6 +177,12 @@
 				<input type='text' name='valor' class="element text medium form-control" maxlength="255" value='<?php echo $producto->getValor()?>'>
 			</div>
 		</li>
+    <li id="li_5" >
+      <label class="description" for="cantidad">Cantidad Producto </label>
+      <div>
+        <input type='text' name='cantidad' class="element text medium form-control" maxlength="255" value='<?php echo $producto->getCantidad()?>'>
+      </div>
+    </li>
 
 
 	<center>

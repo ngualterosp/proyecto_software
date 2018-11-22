@@ -117,13 +117,14 @@ require_once("categoria.php");
 		// método para insertar, recibe como parámetro un objeto de tipo noticia
 		public function insertarProducto($producto){
 			$db=Db::conectar();
-			$insert=$db->prepare('INSERT INTO producto(cod_categoria, cod_genero, nom_producto, descripcion_producto, valor_producto) values 
-				(:cod_categoria,:cod_genero, :nom_producto,:descripcion_producto,:valor_producto)');
+			$insert=$db->prepare('INSERT INTO producto(cod_categoria, cod_genero, nom_producto, descripcion_producto, valor_producto, cantidad) values 
+				(:cod_categoria,:cod_genero, :nom_producto,:descripcion_producto,:valor_producto, :cantidad)');
 			$insert->bindValue('cod_categoria',$producto->getCodigoCategoria());
 			$insert->bindValue('cod_genero',$producto->getCodigoGenero());
 			$insert->bindValue('nom_producto',$producto->getNombre());
 		    $insert->bindValue('descripcion_producto',$producto->getDescripcion());
 			$insert->bindValue('valor_producto',$producto->getValor());
+			$insert->bindValue('cantidad',$producto->getCantidad());
 			$insert->execute();
 
 		}
@@ -151,6 +152,7 @@ require_once("categoria.php");
 				$elProducto->setNombre($producto['nom_producto']);
 				$elProducto->setDescripcion($producto['descripcion_producto']);
 			    $elProducto->setValor($producto['valor_producto']);
+			    $elProducto->setCantidad($producto['cantidad']);
 			    $elProducto->setRuta($producto['ruta_imagen']);
 
 				$listaProductos[]=$elProducto;
@@ -180,6 +182,7 @@ require_once("categoria.php");
 			$elProducto->setNombre($producto['nom_producto']);
 			$elProducto->setDescripcion($producto['descripcion_producto']);
 			$elProducto->setValor($producto['valor_producto']);
+			$elProducto->setCantidad($producto['cantidad']);
 			$elProducto->setRuta($producto['ruta_imagen']);
 			return $elProducto;
 		}
@@ -190,7 +193,7 @@ require_once("categoria.php");
 
 			if($producto->getCodigoGenero() == 0)
 			{
-            $actualizar=$db->prepare('UPDATE producto SET cod_categoria=:cod_categoria,nom_producto=:nom_producto,descripcion_producto=:descripcion_producto, valor_producto = :valor_producto,ruta_imagen=:ruta_imagen  WHERE cod_producto=:cod_producto');
+            $actualizar=$db->prepare('UPDATE producto SET cod_categoria=:cod_categoria,nom_producto=:nom_producto,descripcion_producto=:descripcion_producto, valor_producto = :valor_producto,cantidad=:cantidad,ruta_imagen=:ruta_imagen  WHERE cod_producto=:cod_producto');
             $actualizar->bindValue('cod_producto',$producto->getCodigoProducto());
 	        $actualizar->bindValue('cod_categoria',$producto->getCodigoCategoria());
 	        $actualizar->bindValue('valor_producto',$producto->getValor());
@@ -198,6 +201,7 @@ require_once("categoria.php");
 			$actualizar->bindValue('nom_producto',$producto->getNombre());
             $actualizar->bindValue('descripcion_producto',$producto->getDescripcion());
 			$actualizar->bindValue('ruta_imagen',$producto->getRuta());
+			$actualizar->bindValue('cantidad',$producto->getCantidad());
 
 			
 			$actualizar->execute();

@@ -28,6 +28,7 @@ require_once('categoria.php');
 		$elProducto->setNombre($_POST['nombre']);
 		$elProducto->setDescripcion($_POST['descripcion']);
 		$elProducto->setValor($_POST['valor']);
+		$elProducto->setCantidad($_POST['cantidad']);
 		$crud->actualizarProducto($elProducto);
 		header('Location: tiendaAdmin.php');
 	}
