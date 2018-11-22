@@ -1,3 +1,23 @@
+<?php
+require_once "crud_gira.php";
+require_once "gira.php";
+require_once "evento.php";
+
+
+$crud = new CrudGira();
+$evento = new Evento();
+$codGira = $_GET['cod_gira'];
+$gira = new Gira();
+$gira = $crud->obtenerGira($codGira);
+$listaEventos = $crud->mostrarEventos($codGira);
+
+
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 <title>Tienda</title>
@@ -31,18 +51,28 @@ body, html {height: 100%}
 <br><br><br><br><br>
 <div class="w3-row-padding">
 
+<?php 
+foreach ($listaEventos as $evento) 
+{
+  # code...
 
+?>
 
 <div class="w3-third w3-margin-bottom">
   <ul class="w3-ul w3-border w3-center w3-hover-shadow">
-    <li class="w3-black w3-xlarge w3-padding-32">hinjnjnj</li>
+    <li class="w3-black w3-xlarge w3-padding-32"><?php echo $evento->getNombre() ?></li>
+    <li class="w3-light-grey w3-padding-24"><?php echo $evento->getDescripcion() ?></li>
     <li class="w3-padding-16">imagen</li>
     <li class="w3-light-grey w3-padding-24">
-      <a class= "w3-button w3-blue-grey w3-padding-large 	fa fa-eye" href="mostrar_productos.php?cod_categoria=1">  Ver Productos</a>
+      <a class= "w3-button w3-blue-grey w3-padding-large 	fa fa-eye" href="mostrar_productos.php?cod_categoria=1">  Comprar Tickets</a>
 
     </li>
   </ul>
 </div>
+
+<?php
+}
+?>
 
 
 </div>

@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <?php
-  // Te recomiendo utilizar esta conección, la que utilizas ya no es la recomendada.
-  $link = new PDO('mysql:host=localhost;dbname=badbunny', 'root', ''); // el campo vaciío es para la password.
+   
+    require_once "crud_gira.php";
+    require_once "gira.php";
+    
+
+
+    $crud = new CrudGira();
+    $gira = new Gira();
+   
+    $listaGiras = $crud->obtenerUltimas3Giras();
+
+
 
   ?>
 <html>
@@ -18,56 +28,31 @@
 </div>
 
 <div class="w3-row-padding">
-    <?php foreach ($link->query('SELECT * FROM gira ORDER BY cod_gira DESC LIMIT 1') as $row){ // aca puedes hacer la consulta e iterarla con each. ?>
-      <?php foreach ($link->query('SELECT * FROM gira ORDER BY cod_gira DESC LIMIT 1,1') as $row1){?>
-        <?php foreach ($link->query('SELECT * FROM gira ORDER BY cod_gira DESC LIMIT 2,1') as $row2){?>
+   
 
+<?php foreach ($listaGiras as $gira) {
 
+  # code...
+?>
 
 <div class="w3-third w3-margin-bottom">
   <ul class="w3-ul w3-border w3-center w3-hover-shadow">
     <li class="bg-primary w3-xlarge w3-padding-32"> --IMAGEN--</li>
-    <li>  <?php echo $row['nom_gira'] ?></li>
-    <li>    <?php echo $row['fecha_inicio'] ?></li>
-    <li>    <?php echo $row['descripcion_gira'] ?>
-</li>
+     <li>   <?php echo $gira->getNombre()?></li>
+    <li>    <?php echo $gira->getFecha()?></li>
+    <li>    <?php echo $gira->getDescripcion()?></li>
 <li class="w3-light-grey w3-padding-24">
   <a href="Modelos/tienda/tiendaCliente.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Comprar entradas</button> </a>
-  <a href="Modelos/gira/mostrarEventos.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Observar Eventos</button> </a>
+  <a href="Modelos/gira/mostrarEventos.php?cod_gira=<?php echo $gira->getCodigoGira() ?>"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Observar Eventos</button> </a>
 </li>
 
   </ul>
 </div>
 
-<div class="w3-third w3-margin-bottom">
 
-  <ul class="w3-ul w3-border w3-center w3-hover-shadow">
-    <li class="bg-primary w3-xlarge w3-padding-32"> --IMAGEN--</li>
-    <li>  <?php echo $row1['nom_gira'] ?></li>
-    <li>    <?php echo $row1['fecha_inicio'] ?></li>
-    <li>    <?php echo $row1['descripcion_gira'] ?>
-    <li class="w3-light-grey w3-padding-24">
-<a href="Modelos/tienda/tiendaCliente.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Comprar entradas</button> </a>
-<a href="Modelos/gira/mostrarEventos.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Observar Eventos</button> </a>
-    </li>
-  </ul>
-</div>
 
-<div class="w3-third w3-margin-bottom">
-  <ul class="w3-ul w3-border w3-center w3-hover-shadow">
-    <li class="bg-primary w3-xlarge w3-padding-32"> --IMAGEN--</li>
-    <li><?php echo $row2['nom_gira'] ?></li>
-    <li><?php echo $row2['fecha_inicio'] ?></li>
-    <li><p align="justify"><?php echo $row2['descripcion_gira'] ?></p></li>
-    <li class="w3-light-grey w3-padding-24">
-<a href="Modelos/tienda/tiendaCliente.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Comprar entradas</button> </a>
-<a href="Modelos/gira/mostrarEventos.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Observar Eventos</button> </a>
-    </li>
-  </ul>
-</div>
 <?php } ?>
-<?php } ?>
-<?php } ?>
+
 </div>
 <center>
 <p class="mb-5">Compra tus entradas en la tienda Oficial BadBunnyOfficial. <br>

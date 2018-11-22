@@ -2,6 +2,7 @@
 // incluye la clase Db
 require_once('conexion.php');
 require_once("gira.php");
+require_once("evento.php");
 require_once("pais.php");
 require_once("ciudad.php");
 
@@ -79,6 +80,58 @@ require_once("ciudad.php");
 			$myGira->setFecha($gira['fecha_inicio']);
 			$myGira->setRuta($gira['ruta_imagen']);
 			return $myGira;
+		}
+
+		public function obtenerUltimos3Eventos($codGira)
+		{
+
+			$listaEventos=[];
+	        $db=Db::conectar();
+		     $select=$db->prepare('SELECT  DISTINCT * FROM evento WHERE   cod_gira = :cod_gira ORDER BY cod_evento DESC LIMIT 3');
+		     $select->bindValue('cod_gira', $codGira);
+
+		     $select->execute();
+		     foreach ($select->fetchAll() as $registro)
+		     {
+
+		     	$elEvento = new Evento();
+		     	$elEvento->setCodigoEvento($registro['cod_evento']);
+		     	$elEvento->setCodigoGira($registro['cod_gira']);
+		     	$elEvento->setCodigoCiudad($registro['cod_ciudad']);
+		     	$elEvento->setNombre($registro['nom_evento']);
+		     	$elEvento->setDescripcion($registro['descripcion_evento']);
+		     	$elEvento->setFecha($registro['fecha_evento']);
+
+		     	$listaEventos[] = $elEvento;
+
+		     }
+		     return $listaEventos;
+		}
+
+		public function obtenerUltimas3Giras()
+		{
+
+			$listaGiras=[];
+	        $db=Db::conectar();
+		    $select=$db->prepare('SELECT  DISTINCT * FROM gira ORDER BY cod_gira DESC LIMIT 3');
+
+		    $select->execute();
+		     foreach ($select->fetchAll() as $registro)
+		     {
+
+		     	$laGira = new Gira();
+		     	
+		     	$laGira->setCodigoGira($registro['cod_gira']);
+		     	$laGira->setCodigoAdmin($registro['cod_admin']);
+		     	$laGira->setNombre($registro['nom_gira']);
+		     	$laGira->setDescripcion($registro['descripcion_gira']);
+		     	$laGira->setFecha($registro['fecha_inicio']);
+		     	$laGira->setRuta($registro['ruta_imagen']);
+
+		     	$listaGiras[] = $laGira;
+
+		     }
+		     return $listaGiras;
 		}
 
 		// método para actualizar un noticia, recibe como parámetro la noticia
