@@ -16,21 +16,21 @@
 <button onclick="myFunction('Demo1')" class="w3-btn w3-block w3-black w3-left-align">
 <?php echo $row['lugar_rueda'] ?>
 </button>
-<div id="Demo1" class="w3-container w3-hide">
+<div id="Demo1" class="w3-container">
   <h4><?php echo $row['fecha_rueda'] ?></h4>
   <p><?php echo $row['descripcion_rueda'] ?></p>
 </div>
 <button onclick="myFunction('Demo2')" class="w3-btn w3-block w3-black w3-left-align">
 <?php echo $row1['lugar_rueda'] ?>
 </button>
-<div id="Demo2" class="w3-container w3-hide">
+<div id="Demo2" class="w3-container">
   <h4><?php echo $row1['fecha_rueda'] ?></h4>
   <p><?php echo $row1['descripcion_rueda'] ?></p>
 </div>
 <button onclick="myFunction('Demo3')" class="w3-btn w3-block w3-black w3-left-align">
 <?php echo $row2['lugar_rueda'] ?>
 </button>
-<div id="Demo3" class="w3-container w3-hide">
+<div id="Demo3" class="w3-container">
   <h4><?php echo $row2['fecha_rueda'] ?></h4>
   <p><?php echo $row2['descripcion_rueda'] ?></p>
 </div>
@@ -38,7 +38,7 @@
 <button onclick="myFunction('Demo4')" class="w3-btn w3-block w3-black w3-left-align">
 <?php echo $row3['lugar_rueda'] ?>
 </button>
-<div id="Demo4" class="w3-container w3-hide">
+<div id="Demo4" class="w3-container">
   <h4><?php echo $row3['fecha_rueda'] ?></h4>
   <p><?php echo $row3['descripcion_rueda'] ?></p>
 </div>
@@ -46,7 +46,7 @@
 <button onclick="myFunction('Demo5')" class="w3-btn w3-block w3-black w3-left-align">
 <?php echo $row4['lugar_rueda'] ?>
 </button>
-<div id="Demo5" class="w3-container w3-hide">
+<div id="Demo5" class="w3-container">
   <h4><?php echo $row4['fecha_rueda'] ?></h4>
   <p><?php echo $row4['descripcion_rueda'] ?></p>
 </div>
