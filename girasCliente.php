@@ -54,9 +54,9 @@
 <div class="w3-third w3-margin-bottom">
   <ul class="w3-ul w3-border w3-center w3-hover-shadow">
     <li class="bg-primary w3-xlarge w3-padding-32"> --IMAGEN--</li>
-    <li>  <?php echo $row2['nom_gira'] ?></li>
-    <li>    <?php echo $row2['fecha_inicio'] ?></li>
-    <li>    <?php echo $row2['descripcion_gira'] ?>
+    <li><?php echo $row2['nom_gira'] ?></li>
+    <li><?php echo $row2['fecha_inicio'] ?></li>
+    <li><p align="justify"><?php echo $row2['descripcion_gira'] ?></p></li>
     <li class="w3-light-grey w3-padding-24">
 <a href="tiendaCliente.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Comprar entradas</button> </a>
     </li>

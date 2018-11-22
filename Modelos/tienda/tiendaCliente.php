@@ -50,7 +50,7 @@ body, html {height: 100%}
     <li class="w3-black w3-xlarge w3-padding-32"><?php echo $categoria->getNombre() ?></li>
     <li class="w3-padding-16">imagen</li>
     <li class="w3-light-grey w3-padding-24">
-      <a class= "w3-button w3-blue-grey w3-padding-large" href="mostrar_productos.php?cod_categoria=<?php echo $categoria->getCodigoCategoria() ?>">Ver Productos</a>
+      <a class= "w3-button w3-blue-grey w3-padding-large 	fa fa-eye" href="mostrar_productos.php?cod_categoria=<?php echo $categoria->getCodigoCategoria() ?>">  Ver Productos</a>
 
     </li>
   </ul>
