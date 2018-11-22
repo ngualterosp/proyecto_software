@@ -140,7 +140,7 @@ $crud = new CrudProducto();
 					<li id="li_1" >
 		<label class="description" for="nombre">Nombre Categoria </label>
 		<div>
-			<input id="nombre" placeholder="Nombre categoria" name="nombre" class="element text medium form-control" type="text" maxlength="255" value=""/>
+			<input id="nombre" placeholder="Nombre categoria" name="nombre" class="element text medium form-control" type="text" maxlength="255" value="" required/>
 		</div>
 		</li>
 

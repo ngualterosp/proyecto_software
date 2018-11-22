@@ -136,13 +136,13 @@
 		<li id="li_1" >
 			<label class="description" for="categoria">Nombre Producto </label>
 			<div>
-				<input type='text' class="element text medium form-control" maxlength="255" name='nombre' value='<?php echo $producto->getNombre()?>'>
+				<input type='text' class="element text medium form-control" maxlength="255" name='nombre' required value='<?php echo $producto->getNombre()?>'>
 			</div>
 		</li>
 		<li id="li_2">
 			<label class="description" for="genero">Genero </label>
 			<div>
-		<select name="genero">
+		<select name="genero" required>
 	 		<option selected value="0"> Elige una opción / conservar </option>
 	 				<?php
 
@@ -168,19 +168,19 @@
 		<li id="li_3" >
 			<label class="description" for="categoria">Descripción Producto </label>
 			<div>
-				<input type='text'  class="element text medium form-control" name='descripcion' value='<?php echo $producto->getDescripcion()?>' >
+				<input type='text'  class="element text medium form-control" name='descripcion' required value='<?php echo $producto->getDescripcion()?>' >
 			</div>
 		</li>
 		<li id="li_4" >
 			<label class="description" for="categoria">Valor Producto </label>
 			<div>
-				<input type='text' name='valor' class="element text medium form-control" maxlength="255" value='<?php echo $producto->getValor()?>'>
+				<input type='text' name='valor' class="element text medium form-control" maxlength="255" required value='<?php echo $producto->getValor()?>'>
 			</div>
 		</li>
     <li id="li_5" >
       <label class="description" for="cantidad">Cantidad Producto </label>
       <div>
-				<input placeholder="cantidad" type="number" class="element text medium form-control" name="cantidad" min="1" max="10000" value='<?php echo $producto->getCantidad()?>'>
+				<input placeholder="cantidad" type="number" class="element text medium form-control" name="cantidad" min="1" max="10000" required value='<?php echo $producto->getCantidad()?>'>
       </div>
     </li>
 

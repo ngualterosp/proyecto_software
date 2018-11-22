@@ -135,7 +135,7 @@
 		<li id="li_1" >
 			<label class="description" for="categoria">Nombre Categoria </label>
 			<div>
-				<input type='text' class="element text medium form-control" maxlength="255" name='categoria' value='<?php echo $categoria->getNombre()?>'>
+				<input type='text' class="element text medium form-control" maxlength="255" name='categoria' required value='<?php echo $categoria->getNombre()?>'>
 			</div>
 		</li>
 

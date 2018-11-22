@@ -150,7 +150,7 @@ $categoria = $crud->obtenerCategoria($codigoAA);
 									<li id="li_3" >
 						<label class="description" for="nombre">Nombre producto </label>
 						<div>
-							<input id="nombre" name="nombre" class="element text medium form-control" type="text" maxlength="255" value=""/>
+							<input id="nombre" name="nombre" class="element text medium form-control" type="text" maxlength="255" value="" required/>
 						</div>
 						</li>
 
@@ -189,20 +189,20 @@ $categoria = $crud->obtenerCategoria($codigoAA);
 									<li id="li_4" >
 						<label class="description" for="descripcion">Descripcion del Producto </label>
 						<div>
-							<input id="descripcion" placeholder="Descripción del producto" name="descripcion" class="element text medium form-control" type="text" maxlength="255" value=""/>
+							<input id="descripcion" placeholder="Descripción del producto" name="descripcion" class="element text medium form-control" type="text" maxlength="255" value="" required/>
 						</div>
 						</li>
 
 						<li id="li_5" >
 						<label class="description" for="valor">Valor del producto </label>
 						<div>
-							<input id="valor" placeholder="Valor" name="valor" class="element text medium form-control" type="text" maxlength="255" value=""/>
+							<input id="valor" placeholder="Valor" name="valor" class="element text medium form-control" type="text" maxlength="255" value="" required/>
 						</div>
 						</li>
             <li id="li_6" >
             <label class="description" for="cantidad">Cantidad </label>
             <div>
-              <input id="cantidad" placeholder="cantidad" type="number" class="element text medium form-control" name="cantidad" min="1" max="10000">
+              <input id="cantidad" placeholder="cantidad" type="number" class="element text medium form-control" name="cantidad" min="1" max="10000" required>
             </div>
             </li>
 
