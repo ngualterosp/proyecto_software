@@ -127,13 +127,9 @@
     </section>
 
     <section class="bg-dark text-white">
-      <div class="container text-center">
-        <h2 class="mb-4">RUEDA DE PRENSA E INTERACCIÓN CON FANS</h2>
-        <p class="text-faded mb-4">Las ruedas de prensa e interacción con los fans del 'Conejo Malo' tendrán lugar en las diferentes ciudades en donde se presentará lo que resta de este 2018.
-          Con su gira "La nueva Religión Tour", el artista puertorriqueño atenderá las respectivas entrevistas e interactuará con los fans el día anterior a su concierto en cada ciudad, puesto que
-          por ciudad estará un promedio de 2 días concentrado con su equipo de trabajo.</p>
-          <center><a class="btn btn-light btn-xl js-scroll-trigger" href="#historia">SIGUIENTE</a></center>
-      </div>
+      <?php
+      require_once('ruedaCliente.php');
+      ?>
     </section>
 
     <section id="historia">
