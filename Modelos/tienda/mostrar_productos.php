@@ -56,7 +56,7 @@ body, html {height: 100%}
     <li class="w3-black w3-xlarge w3-padding-32"><?php echo $producto->getNombre() ?></li>
     <li class="w3-padding-16">imagen</li>
     <li class="w3-padding-16"><?php echo $producto->getDescripcion() ?></li>
-    <li class="w3-padding-16">Cantidad:<input type="number" name="quantity" min="1" max="5"></li>
+    <li class="w3-padding-16">Cantidad:<input type="number" name="quantity" min="1" max="<?php echo $producto->getCantidad() ?>"></li>
       <h2 class="w3-wide">$<?php echo $producto->getValor() ?></h2>
     </li>
     <li class="w3-light-grey w3-padding-24">

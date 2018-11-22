@@ -202,7 +202,7 @@ $categoria = $crud->obtenerCategoria($codigoAA);
             <li id="li_6" >
             <label class="description" for="cantidad">Cantidad </label>
             <div>
-              <input id="cantidad" placeholder="cantidad" name="cantidad" class="element text medium form-control" type="text" maxlength="255" value=""/>
+              <input id="cantidad" placeholder="cantidad" type="number" class="element text medium form-control" name="cantidad" min="1" max="10000">
             </div>
             </li>
 

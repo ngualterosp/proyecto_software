@@ -180,7 +180,7 @@
     <li id="li_5" >
       <label class="description" for="cantidad">Cantidad Producto </label>
       <div>
-        <input type='text' name='cantidad' class="element text medium form-control" maxlength="255" value='<?php echo $producto->getCantidad()?>'>
+				<input placeholder="cantidad" type="number" class="element text medium form-control" name="cantidad" min="1" max="10000" value='<?php echo $producto->getCantidad()?>'>
       </div>
     </li>
 
