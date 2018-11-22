@@ -199,6 +199,12 @@ $categoria = $crud->obtenerCategoria($codigoAA);
 							<input id="valor" placeholder="Valor" name="valor" class="element text medium form-control" type="text" maxlength="255" value=""/>
 						</div>
 						</li>
+            <li id="li_6" >
+            <label class="description" for="cantidad">Cantidad </label>
+            <div>
+              <input id="cantidad" placeholder="cantidad" name="cantidad" class="element text medium form-control" type="text" maxlength="255" value=""/>
+            </div>
+            </li>
 
 									<center><li class="buttons">
 							    <input type="hidden" name="form_id" value="35166" />
@@ -219,6 +225,7 @@ $categoria = $crud->obtenerCategoria($codigoAA);
 
 				                    	  $codigoCategoria= $categoria->getCodigoCategoria();
 				                    	  $codigoGenero=$_POST['genero'];
+                                $cantidadProducto= $_POST['cantidad'];
 				                          $nombreProducto=$_POST['nombre'];
 				                          $descripcionProducto=$_POST['descripcion'];
 				                          $valorProducto=$_POST['valor'];
@@ -229,6 +236,7 @@ $categoria = $crud->obtenerCategoria($codigoAA);
 				                          $elProducto->setNombre($nombreProducto);
 				                          $elProducto->setDescripcion($descripcionProducto);
 				                          $elProducto->setValor($valorProducto);
+                                  $elProducto->setCantidad($cantidadProducto);
 
 
 

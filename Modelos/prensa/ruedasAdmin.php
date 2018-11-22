@@ -128,7 +128,6 @@ $listaRuedas=$crud->mostrarRuedas();
 
 <form action="" method="get">
        <a class= "btn btn-primary" href="insertar_prensa.php">Insertar Rueda de Prensa</a>
-       <a  class="btn btn-primary" >Ruedas de Prensa</a>
 
 
 

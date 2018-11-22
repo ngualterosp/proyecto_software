@@ -7,6 +7,7 @@ class Producto{
 	private $nom_producto;
 	private $descripcion_producto;
 	private $valor_producto;
+	private $cantidad;
 	private $ruta_imagen;
 
 	function __construct(){}
@@ -75,6 +76,16 @@ class Producto{
 	public function setValor($elValor)
 	{
 		$this->valor_producto = $elValor;
+	}
+
+	public function getCantidad()
+	{
+		return $this->cantidad;
+	}
+
+	public function setCantidad($nuevaCant)
+	{
+		$this->cantidad = $nuevaCant;
 	}
 
     public function getRuta()

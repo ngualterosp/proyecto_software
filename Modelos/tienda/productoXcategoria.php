@@ -154,6 +154,7 @@ $listaProductos=$crud->mostrarProductos($codigoAA);
               <th>Nombre Producto</th>
               <th>Genero</th>
               <th>Valor Producto</th>
+              <th>Cantidad</th>
               <th>Modificar</th>
               <th>Eliminar</th>
             </tr>
@@ -175,6 +176,7 @@ $listaProductos=$crud->mostrarProductos($codigoAA);
           <td><?php echo $producto->getNombre() ?></td>
           <td><?php echo $genero->getNombre() ?></td>
           <td><?php echo $producto->getValor() ?></td>
+          <td><?php echo $producto->getCantidad() ?></td>
 
 
 

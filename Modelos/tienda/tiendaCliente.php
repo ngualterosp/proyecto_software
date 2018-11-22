@@ -34,7 +34,7 @@ body, html {height: 100%}
   <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="index.php" class="w3-bar-item w3-button w3-padding-large fa fa-home">  Inicio</a>
+    <a href="../../index.php" class="w3-bar-item w3-button w3-padding-large fa fa-home">  Inicio</a>
   </div>
 </div>
 
@@ -50,7 +50,7 @@ body, html {height: 100%}
     <li class="w3-black w3-xlarge w3-padding-32"><?php echo $categoria->getNombre() ?></li>
     <li class="w3-padding-16">imagen</li>
     <li class="w3-light-grey w3-padding-24">
-      <a class= "w3-button w3-blue-grey w3-padding-large" href="mostrar_productos.php?cod_categoria=<?php echo $categoria->getCodigoCategoria() ?>">Ver Productos</a>
+      <a class= "w3-button w3-blue-grey w3-padding-large 	fa fa-eye" href="mostrar_productos.php?cod_categoria=<?php echo $categoria->getCodigoCategoria() ?>">  Ver Productos</a>
 
     </li>
   </ul>
