@@ -42,7 +42,7 @@
     <li>    <?php echo $gira->getFecha()?></li>
     <li>    <?php echo $gira->getDescripcion()?></li>
 <li class="w3-light-grey w3-padding-24">
-  <table>
+  <center><table>
     <tr>
       <td>
 <a href="Modelos/tienda/tiendaCliente.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Comprar entradas</button> </a>
@@ -51,7 +51,7 @@
   <a href="Modelos/gira/mostrarEventos.php?cod_gira=<?php echo $gira->getCodigoGira() ?>"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Observar Eventos</button> </a>
 </td>
 </tr>
-</table>
+</table></center>
 </li>
 
   </ul>
