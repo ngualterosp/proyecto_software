@@ -33,6 +33,7 @@
 </li>
 <li class="w3-light-grey w3-padding-24">
   <a href="tiendaCliente.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Comprar entradas</button> </a>
+  <a href="mostrarEventos.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Observar Eventos</button> </a>
 </li>
 
   </ul>
@@ -47,6 +48,7 @@
     <li>    <?php echo $row1['descripcion_gira'] ?>
     <li class="w3-light-grey w3-padding-24">
 <a href="tiendaCliente.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Comprar entradas</button> </a>
+<a href="mostrarEventos.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Observar Eventos</button> </a>
     </li>
   </ul>
 </div>
@@ -59,6 +61,7 @@
     <li><p align="justify"><?php echo $row2['descripcion_gira'] ?></p></li>
     <li class="w3-light-grey w3-padding-24">
 <a href="tiendaCliente.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Comprar entradas</button> </a>
+<a href="mostrarEventos.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Observar Eventos</button> </a>
     </li>
   </ul>
 </div>

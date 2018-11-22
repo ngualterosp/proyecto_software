@@ -66,7 +66,7 @@
 
     <section id="giras">
           <?php
-          require_once('girasCliente.php');
+          require_once('Modelos/gira/girasCliente.php');
           ?>
       <div>
         <center><br><br>
