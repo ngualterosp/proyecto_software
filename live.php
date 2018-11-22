@@ -32,7 +32,9 @@ session_start();
 
   </head>
 
-  <body id="page-top">
+  <body id="page-top" style="background-color:#FF0000;">
+
+    
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
