@@ -100,7 +100,7 @@
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../../prensas/prensaAdmin.php">
+          <a class="nav-link" href="../prensa/ruedasAdmin.php">
             <i class="fa fa-microphone"></i>
             <span>Rueda de prensa</span>
           </a>

@@ -86,33 +86,39 @@ $listaCiudades = $crudGira->listarCiudades();
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="../inicioAdmin.php">
+          <a class="nav-link" href="../../inicioAdmin.php">
             <i class="fa fa-home"></i>
             <span>Inicio</span>
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../noticias/noticiasAdmin.php">
+          <a class="nav-link" href="../../noticias/noticiasAdmin.php">
             <i class="fa fa-newspaper-o"></i>
             <span>Noticias</span>
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../giras/girasAdmin.php">
+          <a class="nav-link" href="../../giras/girasAdmin.php">
             <i class="fa fa-plane"></i>
             <span>Giras</span>
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../prensas/prensaAdmin.php">
+          <a class="nav-link" href="/ruedasAdmin.php">
             <i class="fa fa-microphone"></i>
             <span>Rueda de prensa</span>
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../Modelos/tienda/tiendaAdmin.php">
+          <a class="nav-link" href="../tienda/tiendaAdmin.php">
             <i class="fa fa-shopping-cart"></i>
             <span>Tienda</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="../../live.php">
+            <i class="fa fa-video-camera"></i>
+            <span>Live</span>
           </a>
         </li>
       </ul>
@@ -132,8 +138,8 @@ $listaCiudades = $crudGira->listarCiudades();
       <p></p>
     </div>
       <ul >
-         
-         
+
+
         <li id="li_2">
       <label class="description" for="cod_ciudad">Ciudad </label>
       <div>
@@ -143,7 +149,7 @@ $listaCiudades = $crudGira->listarCiudades();
 
           foreach ($listaCiudades as $ciudad)
           {
-          
+
 
             ?>
 

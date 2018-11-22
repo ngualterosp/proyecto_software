@@ -104,13 +104,13 @@ $listaRuedas=$crud->mostrarRuedas();
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../../prensas/prensaAdmin.php">
+          <a class="nav-link" href="ruedasAdmin.php">
             <i class="fa fa-microphone"></i>
             <span>Rueda de prensa</span>
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="tiendaAdmin.php">
+          <a class="nav-link" href="../tienda/tiendaAdmin.php">
             <i class="fa fa-shopping-cart"></i>
             <span>Tienda</span>
           </a>
@@ -154,14 +154,14 @@ $listaRuedas=$crud->mostrarRuedas();
 
         // aca puedes hacer la consulta e iterarla con each. ?>
         <tr>
-         
+
           <td><?php echo $pais->getNombre() ?></td>
           <td><?php echo $ciudad->getNombre() ?></td>
           <td><?php echo $rueda->getFecha() ?></td>
           <td><?php echo $rueda->getLugar() ?></td>
           <td><?php echo $rueda->getDescripcion() ?></td>
-          
-          
+
+
 
 
 

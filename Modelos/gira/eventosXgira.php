@@ -106,15 +106,21 @@ $listaEventos=$crud->mostrarEventos($codigoAA);
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../../prensas/prensaAdmin.php">
+          <a class="nav-link" href="../prensa/ruedasAdmin.php">
             <i class="fa fa-microphone"></i>
             <span>Rueda de prensa</span>
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="tiendaAdmin.php">
+          <a class="nav-link" href="../tienda/tiendaAdmin.php">
             <i class="fa fa-shopping-cart"></i>
             <span>Tienda</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="../../live.php">
+            <i class="fa fa-video-camera"></i>
+            <span>Live</span>
           </a>
         </li>
       </ul>
@@ -177,7 +183,7 @@ $listaEventos=$crud->mostrarEventos($codigoAA);
           <td><?php echo $ciudad->getNombre() ?></td>
           <td><?php echo $evento->getDescripcion() ?></td>
           <td><?php echo $evento->getFecha() ?></td>
-          
+
 
 
 

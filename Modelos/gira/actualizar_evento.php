@@ -13,7 +13,7 @@
 
   $listaCiudades = $crud->listarCiudades();
 	//busca la noticia utilizando el id, que es enviado por GET desde la vista mostrar.php
-	
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -106,7 +106,7 @@
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../../prensas/prensaAdmin.php">
+          <a class="nav-link" href="../prensa/ruedasAdmin.php">
             <i class="fa fa-microphone"></i>
             <span>Rueda de prensa</span>
           </a>
@@ -115,6 +115,12 @@
           <a class="nav-link" href="../tienda/tiendaAdmin.php">
             <i class="fa fa-shopping-cart"></i>
             <span>Tienda</span>
+          </a>
+        </li>
+				<li class="nav-item active">
+          <a class="nav-link" href="../../live.php">
+            <i class="fa fa-video-camera"></i>
+            <span>Live</span>
           </a>
         </li>
       </ul>
@@ -155,7 +161,7 @@
 
           foreach ($listaCiudades as $ciudad)
           {
-          
+
 
             ?>
 
