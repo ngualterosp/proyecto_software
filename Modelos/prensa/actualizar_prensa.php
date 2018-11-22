@@ -184,7 +184,7 @@
 <center>
 <input type='hidden' name='actualizarRueda' value='actualizarRueda'>
 <input class="btn btn-primary " type="submit" value="Modificar" />
-<a href="../../giras/girasAdmin.php"> Volver </a>
+<a href="ruedasAdmin.php"> Volver </a>
 </center>
 </form>
 

@@ -104,7 +104,7 @@ $listaCiudades = $crudGira->listarCiudades();
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="/ruedasAdmin.php">
+          <a class="nav-link" href="ruedasAdmin.php">
             <i class="fa fa-microphone"></i>
             <span>Rueda de prensa</span>
           </a>
@@ -183,7 +183,7 @@ $listaCiudades = $crudGira->listarCiudades();
           <input type="hidden" name="form_id" value="35166" />
 
         <center><input id="saveForm" class="btn btn-primary" type="submit" name="insertarRueda" value="Agregar" />
-        <a href="../../giras/girasAdmin.php"> Volver </a></center>
+        <a href="ruedasAdmin.php"> Volver </a></center>
     </ul>
     </form>
 

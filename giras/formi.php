@@ -146,7 +146,7 @@ session_start();
       </div>
     </li>
 
-
+<center>
 			    <input type="hidden" name="form_id" value="35166" />
 
           <input type="submit" name="submit" value="Agregar" id="saveForm" class="btn btn-primary"/>
