@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <?php
-   
+
     require_once "crud_gira.php";
     require_once "gira.php";
-    
+
 
 
     $crud = new CrudGira();
     $gira = new Gira();
-   
+
     $listaGiras = $crud->obtenerUltimas3Giras();
 
 
@@ -28,7 +28,7 @@
 </div>
 
 <div class="w3-row-padding">
-   
+
 
 <?php foreach ($listaGiras as $gira) {
 
@@ -42,8 +42,16 @@
     <li>    <?php echo $gira->getFecha()?></li>
     <li>    <?php echo $gira->getDescripcion()?></li>
 <li class="w3-light-grey w3-padding-24">
-  <a href="Modelos/tienda/tiendaCliente.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Comprar entradas</button> </a>
+  <table>
+    <tr>
+      <td>
+<a href="Modelos/tienda/tiendaCliente.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Comprar entradas</button> </a>
+</td>
+<td>
   <a href="Modelos/gira/mostrarEventos.php?cod_gira=<?php echo $gira->getCodigoGira() ?>"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Observar Eventos</button> </a>
+</td>
+</tr>
+</table>
 </li>
 
   </ul>
