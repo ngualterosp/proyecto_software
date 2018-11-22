@@ -6,7 +6,7 @@
 <body>
 <div class="w3-container">
 
-<h2>Próximas ruedas de prensa de Bad Bunny</h2>
+<center><h2>Próximas ruedas de prensa de Bad Bunny</h2></center><br>
 <?php foreach ($link->query('SELECT * FROM rueda_prensa ORDER BY cod_rueda_prensa DESC LIMIT 1') as $row){ // aca puedes hacer la consulta e iterarla con each. ?>
   <?php foreach ($link->query('SELECT * FROM rueda_prensa ORDER BY cod_rueda_prensa DESC LIMIT 1,1') as $row1){?>
     <?php foreach ($link->query('SELECT * FROM rueda_prensa ORDER BY cod_rueda_prensa DESC LIMIT 2,1') as $row2){?>
@@ -16,21 +16,21 @@
 <button onclick="myFunction('Demo1')" class="w3-btn w3-block w3-black w3-left-align">
 <?php echo $row['lugar_rueda'] ?>
 </button>
-<div id="Demo1" class="w3-container">
+<div id="Demo1" class="w3-container w3-hide">
   <h4><?php echo $row['fecha_rueda'] ?></h4>
   <p><?php echo $row['descripcion_rueda'] ?></p>
 </div>
 <button onclick="myFunction('Demo2')" class="w3-btn w3-block w3-black w3-left-align">
 <?php echo $row1['lugar_rueda'] ?>
 </button>
-<div id="Demo2" class="w3-container">
+<div id="Demo2" class="w3-container w3-hide">
   <h4><?php echo $row1['fecha_rueda'] ?></h4>
   <p><?php echo $row1['descripcion_rueda'] ?></p>
 </div>
 <button onclick="myFunction('Demo3')" class="w3-btn w3-block w3-black w3-left-align">
 <?php echo $row2['lugar_rueda'] ?>
 </button>
-<div id="Demo3" class="w3-container">
+<div id="Demo3" class="w3-container w3-hide">
   <h4><?php echo $row2['fecha_rueda'] ?></h4>
   <p><?php echo $row2['descripcion_rueda'] ?></p>
 </div>
@@ -38,7 +38,7 @@
 <button onclick="myFunction('Demo4')" class="w3-btn w3-block w3-black w3-left-align">
 <?php echo $row3['lugar_rueda'] ?>
 </button>
-<div id="Demo4" class="w3-container">
+<div id="Demo4" class="w3-container w3-hide">
   <h4><?php echo $row3['fecha_rueda'] ?></h4>
   <p><?php echo $row3['descripcion_rueda'] ?></p>
 </div>
@@ -46,7 +46,7 @@
 <button onclick="myFunction('Demo5')" class="w3-btn w3-block w3-black w3-left-align">
 <?php echo $row4['lugar_rueda'] ?>
 </button>
-<div id="Demo5" class="w3-container">
+<div id="Demo5" class="w3-container w3-hide">
   <h4><?php echo $row4['fecha_rueda'] ?></h4>
   <p><?php echo $row4['descripcion_rueda'] ?></p>
 </div>
