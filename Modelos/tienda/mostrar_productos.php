@@ -39,7 +39,8 @@ body, html {height: 100%}
   <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="index.php" class="w3-bar-item w3-button w3-padding-large fa fa-home">  Inicio</a>
+    <a href="../../index.php" class="w3-bar-item w3-button w3-padding-large fa fa-home">  Inicio</a>
+    <a href="tiendaCliente.php" class="w3-bar-item w3-button w3-padding-large fa fa-reply">  Categorias</a>
   </div>
 </div>
 
@@ -54,8 +55,12 @@ body, html {height: 100%}
   <ul class="w3-ul w3-border w3-center w3-hover-shadow">
     <li class="w3-black w3-xlarge w3-padding-32"><?php echo $producto->getNombre() ?></li>
     <li class="w3-padding-16">imagen</li>
+    <li class="w3-padding-16"><?php echo $producto->getDescripcion() ?></li>
+    <li class="w3-padding-16">Cantidad:<input type="number" name="quantity" min="1" max="5"></li>
+      <h2 class="w3-wide">$<?php echo $producto->getValor() ?></h2>
+    </li>
     <li class="w3-light-grey w3-padding-24">
-      <button class="w3-button w3-blue-grey w3-padding-large" name= "">Comprar</button>
+      <button class="w3-button w3-blue-grey w3-padding-large fa fa-credit-card" name= "">  Comprar</button>
     </li>
   </ul>
 </div>
