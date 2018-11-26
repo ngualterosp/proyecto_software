@@ -174,7 +174,8 @@
 		<li id="li_4" >
 			<label class="description" for="categoria">Valor Producto </label>
 			<div>
-				<input type='text' name='valor' class="element text medium form-control" maxlength="255" required value='<?php echo $producto->getValor()?>'>
+				<input type="text" name="valor" required placeholder="Valor" class="element text medium form-control"
+				 id="valor" value="<?php echo $producto->getValor()?>" onkeypress="return filterFloat(event,this);"/>
 			</div>
 		</li>
     <li id="li_5" >
@@ -216,6 +217,44 @@
 
     </div>
     <!-- /#wrapper -->
+		<script type="text/javascript">
+		<!--
+		function filterFloat(evt,input){
+				// Backspace = 8, Enter = 13, ‘0′ = 48, ‘9′ = 57, ‘.’ = 46, ‘-’ = 43
+				var key = window.Event ? evt.which : evt.keyCode;
+				var chark = String.fromCharCode(key);
+				var tempValue = input.value+chark;
+				if(key >= 48 && key <= 57){
+						if(filter(tempValue)=== false){
+								return false;
+						}else{
+								return true;
+						}
+				}else{
+							if(key == 8 || key == 13 || key == 0) {
+									return true;
+							}else if(key == 46){
+										if(filter(tempValue)=== false){
+												return false;
+										}else{
+												return true;
+										}
+							}else{
+									return false;
+							}
+				}
+		}
+		function filter(__val__){
+				var preg = /^([0-9]+\.?[0-9]{0,2})$/;
+				if(preg.test(__val__) === true){
+						return true;
+				}else{
+					 return false;
+				}
+
+		}
+		-->
+		</script>
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
