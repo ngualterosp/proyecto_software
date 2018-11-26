@@ -17,6 +17,14 @@ $listaProductos = $crud->mostrarProductos($codigoCategoria);
 
 <!DOCTYPE html>
 <html>
+<head>
+        <meta charset="utf-8">
+        <meta name="description" content="Bootstrap HTML5">
+        <meta name="keywords" content="HTML5, CSS3, JavaScript">
+    </head>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.min.css">
+    <script src="bootstrap.min.js"></script>
 <title>Tienda</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,10 +68,12 @@ body, html {height: 100%}
       <h2 class="w3-wide">$<?php echo $producto->getValor() ?></h2>
     </li>
     <li class="w3-light-grey w3-padding-24">
-      <button class="w3-button w3-blue-grey w3-padding-large fa fa-credit-card" name= "">  Comprar</button>
+       <a href="#" class="btn btn-default producto" precio="<?php echo $producto->getValor() ?>" nombre="<?php echo $producto->getNombre() ?>" role="button">Comprar</a>
     </li>
   </ul>
 </div>
+
+
 
 <?php } ?>
 
@@ -71,5 +81,30 @@ body, html {height: 100%}
   </div>
 </div>
 
+<script src="minicart.js"></script>
+  <script>
+    // configuración inicial del carrito 
+    paypal.minicart.render({
+    strings:{
+      button:'Pagar'
+     ,buttonAlt: "Total"
+     ,subtotal: 'Total:'
+     ,empty: 'No hay productos en el carrito'
+    }
+    });
+    // Eventos para agregar productos al carrito
+    
+     $('.producto').click(function(e){
+         e.stopPropagation();
+        paypal.minicart.cart.add({
+      business: 'badbunny@gmail.com', // Cuenta paypal para recibir el dinero
+      item_name: $(this).attr("nombre"),
+       amount: $(this).attr("precio"),
+       currency_code: 'USD',
+      
+      });
+     });
+    
+  </script>
 </body>
 </html>
