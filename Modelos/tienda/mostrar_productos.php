@@ -65,7 +65,7 @@ body, html {height: 100%}
     <li class="w3-padding-16"> <img src="../../img/camiseta.jpg" width="80%"> </li>
     <li class="w3-padding-16"><?php echo $producto->getDescripcion() ?></li>
     <li class="w3-padding-16">Cantidad:<input type="number" name="quantity" min="1" max="<?php echo $producto->getCantidad() ?>"></li>
-      <h2 class="w3-wide">$<?php echo $producto->getValor() ?></h2>
+      <h2 class="w3-wide">$<?php echo $producto->getValor() ?> USD.</h2>
     </li>
     <li class="w3-light-grey w3-padding-24">
        <a href="#" class="btn btn-default producto" precio="<?php echo $producto->getValor() ?>" nombre="<?php echo $producto->getNombre() ?>" role="button">Comprar</a>
@@ -83,7 +83,7 @@ body, html {height: 100%}
 
 <script src="minicart.js"></script>
   <script>
-    // configuración inicial del carrito 
+    // configuración inicial del carrito
     paypal.minicart.render({
     strings:{
       button:'Pagar'
@@ -93,7 +93,7 @@ body, html {height: 100%}
     }
     });
     // Eventos para agregar productos al carrito
-    
+
      $('.producto').click(function(e){
          e.stopPropagation();
         paypal.minicart.cart.add({
@@ -101,10 +101,10 @@ body, html {height: 100%}
       item_name: $(this).attr("nombre"),
        amount: $(this).attr("precio"),
        currency_code: 'USD',
-      
+
       });
      });
-    
+
   </script>
 </body>
 </html>
