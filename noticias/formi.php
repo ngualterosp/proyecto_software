@@ -122,7 +122,7 @@ session_start();
 					<div id="form_container">
 
 						<h1><a>Insertar Noticia</a></h1>
-						<form id="form_35166" class="appnitro"  method="post" action="">
+						<form id="form_35166" class="appnitro" enctype="multipart/form-data" method="post" action="../Modelos/noticia/administrar_noticia.php">
 									<div class="form_description">
 							<h2>Insertar Noticia</h2>
 							<p></p>
@@ -132,7 +132,7 @@ session_start();
 									<li id="li_1" >
 						<label class="description" for="titular">Titular </label>
 						<div>
-							<input id="titular" name="titular" placeholder="Titular" class="element text medium form-control"
+							<input id="titular" name="titular_noticia" placeholder="Titular" class="element text medium form-control"
               type="text" maxlength="255" value="" required />
 						</div>
 						</li>		<li id="li_2" >
@@ -167,10 +167,15 @@ session_start();
 						</li>		<li id="li_3" >
 						<label class="description" for="entrada">Descripción </label>
 						<div>
-							<textarea id="entrada" name="entrada" placeholder="Descripción de la noticia" class="element textarea medium form-control"
+							<textarea id="entrada" name="entrada_noticia" placeholder="Descripción de la noticia" class="element textarea medium form-control"
               required ></textarea>
 						</div>
 						</li>
+            <li id="li_4">
+              <div>
+                <input type="file" required name="ruta_imagen"/>
+              </div>
+            </li>
 
 									<center>
 							    <input type="hidden" name="form_id" value="35166" />
