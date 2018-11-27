@@ -5,6 +5,7 @@
 		private $entrada_noticia;
 		private $fecha_noticia;
 		private $cod_admin;
+		private $ruta_imagen;
 
 		function __construct(){}
 
@@ -48,6 +49,15 @@
 			$this->cod_admin = $codNuevoAdmin ;
 		}
 
+		public function getRuta()
+		{
+			return $this->ruta_imagen;
+		}
+
+		public function setRuta($nuevaRuta)
+		{
+			$this->ruta_imagen = $nuevaRuta;
+		}
 
 
 	}

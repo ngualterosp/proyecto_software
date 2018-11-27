@@ -122,7 +122,7 @@ session_start();
 					<div id="form_container">
 
 						<h1><a>Insertar Noticia</a></h1>
-						<form id="form_35166" class="appnitro"  method="post" action="">
+						<form id="form_35166" class="appnitro" enctype="multipart/form-data" method="post" action="">
 									<div class="form_description">
 							<h2>Insertar Noticia</h2>
 							<p></p>
@@ -169,6 +169,10 @@ session_start();
 						<div>
 							<textarea id="entrada" name="entrada" placeholder="Descripción de la noticia" class="element textarea medium form-control"
               required ></textarea>
+						</div>
+          </li><li id="li_4" >
+						<div>
+							<input type="file" name="ruta_imagen"/>
 						</div>
 						</li>
 

@@ -122,7 +122,7 @@ session_start();
 	<div id="form_container">
 
 		<h1><a>Insertar Noticia</a></h1>
-		<form id="form_35166" class="appnitro"  method="post" action="../Modelos/gira/administrar_gira.php">
+		<form id="form_35166" class="appnitro"  method="post" enctype="multipart/form-data" action="../Modelos/gira/administrar_gira.php">
 					<div class="form_description">
 			<h2>Insertar Gira</h2>
 			<p></p>
@@ -140,9 +140,9 @@ session_start();
 			<textarea id="entrada" placeholder="Descripción de la gira" required name="descripcion_gira" class="element textarea medium form-control"></textarea>
 		</div>
 		</li>
-    <li>
+    <li id="li_4">
       <div>
-        <?php include("indexImagen.php"); ?>
+          <input type="file" required name="ruta_imagen"/>
       </div>
     </li>
 
