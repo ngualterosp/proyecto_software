@@ -133,7 +133,7 @@ $categoria = $crud->obtenerCategoria($codigoAA);
 					<div id="form_container">
 
 						<h1><a>Insertar Producto</a></h1>
-						<form id="form_35166" class="appnitro"  method="post" action="">
+						<form id="form_35166" class="appnitro"  method="post" action="" enctype="multipart/form-data">
 									<div class="form_description">
 							<h2>Insertar Producto</h2>
 							<p></p>
