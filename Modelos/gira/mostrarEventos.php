@@ -30,7 +30,7 @@ $listaEventos = $crud->mostrarEventos($codGira);
     <script src="bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-  
+
 
 <style>
 body,h1 {font-family: "Raleway", sans-serif}
@@ -57,8 +57,8 @@ body, html {height: 100%}
 <br><br><br><br><br>
 <div class="w3-row-padding">
 
-<?php 
-foreach ($listaEventos as $evento) 
+<?php
+foreach ($listaEventos as $evento)
 {
   # code...
 
@@ -68,13 +68,10 @@ foreach ($listaEventos as $evento)
   <ul class="w3-ul w3-border w3-center w3-hover-shadow">
     <li class="w3-black w3-xlarge w3-padding-32"><?php echo $evento->getNombre() ?></li>
     <li class="w3-light-grey w3-padding-24"><?php echo $evento->getDescripcion() ?></li>
-    <li class="w3-padding-16">imagen</li>
-    <li class="w3-light-grey w3-padding-24">
-
           <li class="w3-black w3-xlarge w3-padding-32"> $ <?php echo $evento->getValor()?> USD. </li>
-
-      <a href="#" class="btn btn-default producto" precio="<?php echo $evento->getValor() ?>" nombre="<?php echo $evento->getNombre() ?>" role="button">Comprar Ticket</a>
-
+          <li  class="w3-black w3-xlarge w3-padding-32">
+      <a class="w3-light-grey w3-padding-24" href="#" class="btn btn-default producto" precio="<?php echo $evento->getValor() ?>" nombre="<?php echo $evento->getNombre() ?>" role="button">Comprar Ticket</a>
+    </li>
     </li>
   </ul>
 </div>

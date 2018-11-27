@@ -204,6 +204,11 @@ $categoria = $crud->obtenerCategoria($codigoAA);
               <input id="cantidad" placeholder="cantidad" type="number" class="element text medium form-control" name="cantidad" min="1" max="10000" required>
             </div>
             </li>
+            <li id="li_7">
+              <div>
+                <input type="file" required name="ruta_imagen"/>
+              </div>
+            </li>
 
 									<center><li class="buttons">
 							    <input type="hidden" name="form_id" value="35166" />
