@@ -45,7 +45,7 @@
   <center><table>
     <tr>
       <td>
-<a href="Modelos/tienda/tiendaCliente.php"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Comprar entradas</button> </a>
+
 </td>
 <td>
   <a href="Modelos/gira/mostrarEventos.php?cod_gira=<?php echo $gira->getCodigoGira() ?>"> <button class="w3-button w3-black btn btn-primary w3-padding-large">Observar Eventos</button> </a>

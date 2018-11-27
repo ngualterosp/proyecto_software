@@ -159,6 +159,7 @@ $listaEventos=$crud->mostrarEventos($codigoAA);
               <th>Pais</th>
               <th>Ciudad</th>
               <th>Descripcion</th>
+              <th>Valor Evento </th>
               <th>Fecha</th>
               <th>Modificar</th>
               <th>Eliminar</th>
@@ -182,6 +183,8 @@ $listaEventos=$crud->mostrarEventos($codigoAA);
           <td><?php echo $pais->getNombre() ?></td>
           <td><?php echo $ciudad->getNombre() ?></td>
           <td><?php echo $evento->getDescripcion() ?></td>
+         <td><?php echo  $evento->getValor() ?></td>
+
           <td><?php echo $evento->getFecha() ?></td>
 
 

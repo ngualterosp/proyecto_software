@@ -8,6 +8,7 @@ class Evento{
 	private $cod_ciudad;
 	private $nom_evento;
 	private $descripcion_evento;
+  private $valor_evento;
 	private $fecha_evento;
 
 
@@ -64,6 +65,16 @@ class Evento{
   	{
   		$this->descripcion_evento = $nuevaDesc;
   	}
+
+    public function getValor()
+    {
+      return $this->valor_evento;
+    }
+
+    public function setValor($valorParametro)
+    {
+      $this->valor_evento = $valorParametro;
+    }
 
   	public function getFecha()
   	{

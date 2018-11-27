@@ -20,6 +20,7 @@ require_once('gira.php');
 		$elEvento->setCodigoCiudad($_POST['cod_ciudad']);
 		$elEvento->setNombre($_POST['nom_evento']);
 		$elEvento->setDescripcion($_POST['descripcion_evento']);
+		$elEvento->setValor($_POST['valor_evento']);
 		
 		
 		$crud->actualizarEvento($elEvento);
@@ -43,6 +44,7 @@ require_once('gira.php');
 		$elEvento->setCodigoCiudad($_POST['cod_ciudad']);
 		$elEvento->setNombre($_POST['nom_evento']);
 		$elEvento->setDescripcion($_POST['descripcion_evento']);
+		$elEvento->setValor($_POST['valor_evento']);
 		$crud->insertarEvento($elEvento);
 		header('Location: ../../giras/girasAdmin.php');
 	}
