@@ -13,10 +13,15 @@ require_once("ciudad.php");
 		// método para insertar, recibe como parámetro un objeto de tipo noticia
 		public function insertar($gira){
 			$db=Db::conectar();
+<<<<<<< HEAD
 			$insert=$db->prepare('INSERT INTO gira(cod_admin, nom_gira, descripcion_gira) values(1,:nom_gira,:descripcion_gira)');
+=======
+			$insert=$db->prepare('INSERT INTO gira(cod_admin, nom_gira, descripcion_gira, ruta_imagen) values(1,:nom_gira,:descripcion_gira,:ruta_imagen)');
+>>>>>>> master
 
 			$insert->bindValue('nom_gira',$gira->getNombre());
 			$insert->bindValue('descripcion_gira',$gira->getDescripcion());
+			$insert->bindValue('ruta_imagen',$gira->getRuta());
 			$insert->execute();
 
 		}
@@ -166,13 +171,20 @@ require_once("ciudad.php");
 		public function insertarEvento($evento)
 		{
 			$db = Db::conectar();
+<<<<<<< HEAD
 			$insert = $db->prepare('INSERT INTO evento(cod_gira, cod_ciudad, nom_evento, descripcion_evento, valor_evento) values(:cod_gira, :cod_ciudad, :nom_evento,:descripcion_evento, :valor_evento)');
+=======
+			$insert = $db->prepare('INSERT INTO evento(cod_gira, cod_ciudad, nom_evento, descripcion_evento) values(:cod_gira, :cod_ciudad, :nom_evento,:descripcion_evento)');
+>>>>>>> master
 
 			$insert->bindValue('cod_gira',$evento->getCodigoGira());
 			$insert->bindValue('cod_ciudad',$evento->getCodigoCiudad());
 			$insert->bindValue('nom_evento',$evento->getNombre());
 			$insert->bindValue('descripcion_evento',$evento->getDescripcion());
+<<<<<<< HEAD
 			$insert->bindValue('valor_evento', $evento->getValor());
+=======
+>>>>>>> master
 
 
 			$insert->execute();
