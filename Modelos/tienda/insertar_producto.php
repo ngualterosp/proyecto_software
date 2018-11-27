@@ -241,7 +241,7 @@ $categoria = $crud->obtenerCategoria($codigoAA);
 				                          $elProducto->setDescripcion($descripcionProducto);
 				                          $elProducto->setValor($valorProducto);
                                   $elProducto->setCantidad($cantidadProducto);
-
+                                  $elProducto->setRuta(addslashes(file_get_contents($_FILES['ruta_imagen']['tmp_name'])));
 
 
 				                          $crud->insertarProducto($elProducto);

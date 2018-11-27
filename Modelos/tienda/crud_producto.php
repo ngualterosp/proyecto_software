@@ -37,7 +37,7 @@ require_once("categoria.php");
         	$select= $db->query('SELECT * FROM genero');
         	$listaGeneros=[];
 
-        	foreach ($select->fetchAll() as $genero) 
+        	foreach ($select->fetchAll() as $genero)
 
         	{
 
@@ -45,7 +45,7 @@ require_once("categoria.php");
         		$elGenero->setCodigoGenero($genero['cod_genero']);
         		$elGenero->setNombre($genero['nom_genero']);
 
-        		$listaGeneros[]=$elGenero; 
+        		$listaGeneros[]=$elGenero;
 
         	}
         	return $listaGeneros;
@@ -56,8 +56,9 @@ require_once("categoria.php");
 		public function insertarCategoria($categoria)
 		{
 			$db=Db::conectar();
-			$insert = $db->prepare('INSERT INTO categoria(nom_categoria) values(:nom_categoria)');
+			$insert = $db->prepare('INSERT INTO categoria(nom_categoria, ruta_imagen) values(:nom_categoria, :ruta_imagen)');
 			$insert->bindValue('nom_categoria', $categoria->getNombre());
+			$insert->bindValue('ruta_imagen', $categoria->getRuta());
 			$insert->execute();
 		}
 
@@ -67,15 +68,15 @@ require_once("categoria.php");
 		    $db=Db::conectar();
 		    $listaCategorias=[];
 		    $select=$db->query('SELECT * FROM categoria');
-		    foreach ($select->fetchAll() as $categoria ) 
+		    foreach ($select->fetchAll() as $categoria )
 		    {
-		    	
+
 		    	$laCategoria = new Categoria();
 		    	$laCategoria->setCodigoCategoria($categoria['cod_categoria']);
 		    	$laCategoria->setNombre($categoria['nom_categoria']);
 		        $laCategoria->setRuta($categoria['ruta_imagen']);
 
-		      	
+
 
 		      	$listaCategorias[] = $laCategoria;
 
@@ -94,9 +95,9 @@ require_once("categoria.php");
 	        $actualizar->bindValue('nom_categoria',$categoria->getNombre());
 
 			$actualizar->bindValue('cod_categoria',$categoria->getCodigoCategoria());
-            
 
-			
+
+
 			$actualizar->execute();
 		}
 
@@ -117,14 +118,15 @@ require_once("categoria.php");
 		// método para insertar, recibe como parámetro un objeto de tipo noticia
 		public function insertarProducto($producto){
 			$db=Db::conectar();
-			$insert=$db->prepare('INSERT INTO producto(cod_categoria, cod_genero, nom_producto, descripcion_producto, valor_producto, cantidad) values 
-				(:cod_categoria,:cod_genero, :nom_producto,:descripcion_producto,:valor_producto, :cantidad)');
+			$insert=$db->prepare('INSERT INTO producto(cod_categoria, cod_genero, nom_producto, descripcion_producto, valor_producto, cantidad, ruta_imagen) values
+				(:cod_categoria,:cod_genero, :nom_producto,:descripcion_producto,:valor_producto, :cantidad, :ruta_imagen)');
 			$insert->bindValue('cod_categoria',$producto->getCodigoCategoria());
 			$insert->bindValue('cod_genero',$producto->getCodigoGenero());
 			$insert->bindValue('nom_producto',$producto->getNombre());
 		    $insert->bindValue('descripcion_producto',$producto->getDescripcion());
 			$insert->bindValue('valor_producto',$producto->getValor());
 			$insert->bindValue('cantidad',$producto->getCantidad());
+			$insert->bindValue('ruta_imagen',$producto->getRuta());
 			$insert->execute();
 
 		}
@@ -203,12 +205,12 @@ require_once("categoria.php");
 			$actualizar->bindValue('ruta_imagen',$producto->getRuta());
 			$actualizar->bindValue('cantidad',$producto->getCantidad());
 
-			
+
 			$actualizar->execute();
-		
+
 }
 
-			
+
 			else
 			{
 				$actualizar=$db->prepare('UPDATE producto SET cod_categoria=:cod_categoria, cod_genero=:cod_genero,nom_producto=:nom_producto,descripcion_producto=:descripcion_producto,ruta_imagen=:ruta_imagen  WHERE cod_producto=:cod_producto');
@@ -220,7 +222,7 @@ require_once("categoria.php");
             $actualizar->bindValue('descripcion_producto',$producto->getDescripcion());
 			$actualizar->bindValue('ruta_imagen',$producto->getRuta());
 
-			
+
 			$actualizar->execute();
 		}
 

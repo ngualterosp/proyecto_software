@@ -140,7 +140,7 @@ $crud = new CrudProducto();
 					<li id="li_1" >
 		<label class="description" for="nombre">Nombre Categoria </label>
 		<div>
-			<input id="nombre" placeholder="Nombre categoria" name="nombre" class="element text medium form-control" type="text" maxlength="255" value="" required/>
+			<input id="nombre" placeholder="Nombre categoria" name="nom_categoria" class="element text medium form-control" type="text" maxlength="255" value="" required/>
 		</div>
 		</li>
     <li id="li_4">
@@ -161,11 +161,12 @@ $crud = new CrudProducto();
 
 	<?php
 			        $db = Db::conectar();
-                    if(isset($_POST['nombre']))
+                    if(isset($_POST['nom_categoria']))
                     {
-                          $nombreVar=$_POST['nombre'];
+                          $nombreVar=$_POST['nom_categoria'];
                           $categoria = new Categoria();
                           $categoria->setNombre($nombreVar);
+                          $categoria->setRuta(addslashes(file_get_contents($_FILES['ruta_imagen']['tmp_name'])));
 
                           $crud->insertarCategoria($categoria);
 
