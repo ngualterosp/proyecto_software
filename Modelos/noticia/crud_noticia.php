@@ -9,10 +9,9 @@ require_once('conexion.php');
 		// método para insertar, recibe como parámetro un objeto de tipo noticia
 		public function insertar($noticia){
 			$db=Db::conectar();
-			$insert=$db->prepare('INSERT INTO noticia(titular_noticia, entrada_noticia, cod_admin, ruta_imagen) values(:titular_noticia,:entrada_noticia,1,:ruta_imagen)');
+			$insert=$db->prepare('INSERT INTO noticia(titular_noticia, entrada_noticia, cod_admin) values(:titular_noticia,:entrada_noticia,1)');
 			$insert->bindValue('titular_noticia',$noticia->getTitular());
 			$insert->bindValue('entrada_noticia',$noticia->getEntrada());
-			$insert->bindValue('ruta_imagen',$noticia->getRuta());
 			$insert->execute();
 
 		}
@@ -68,7 +67,7 @@ require_once('conexion.php');
 			$actualizar->bindValue('laEntrada',$noticia->getEntrada());
 
 			$actualizar->bindValue('elCodigo',$noticia->getCodigo());
-
+			
 			$actualizar->execute();
 		}
 	}

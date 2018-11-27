@@ -33,7 +33,6 @@ $gira= new Gira();
 
 		$gira->setNombre($_POST['nom_gira']);
 		$gira->setDescripcion($_POST['descripcion_gira']);
-		$gira->setRuta(addslashes(file_get_contents($_FILES['ruta_imagen']['tmp_name'])));
 
 		//llama a la función insertar definida en el crud
 		$crud->insertar($gira);

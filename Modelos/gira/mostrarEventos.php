@@ -57,8 +57,8 @@ body, html {height: 100%}
 <br><br><br><br><br>
 <div class="w3-row-padding">
 
-<?php
-foreach ($listaEventos as $evento)
+<?php 
+foreach ($listaEventos as $evento) 
 {
   # code...
 

@@ -37,7 +37,7 @@
 
 <div class="w3-third w3-margin-bottom">
   <ul class="w3-ul w3-border w3-center w3-hover-shadow">
-    <li class="bg-primary w3-xlarge w3-padding-32"><img src="data:image/jpg;base64, <?php echo base64_encode($gira->getRuta())?>" width="90%"> </li>
+    <li class="bg-primary w3-xlarge w3-padding-32"> <img src="img/giras1.jpg" width="90%"> </li>
      <li>   <?php echo $gira->getNombre()?></li>
     <li>    <?php echo $gira->getFecha()?></li>
     <li>    <?php echo $gira->getDescripcion()?></li>
