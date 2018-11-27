@@ -8,13 +8,15 @@ $crud= new CrudNoticia();
 $noticia= new Noticia();
 
 	// si el elemento insertar no viene nulo llama al crud e inserta un noticia
-	if (isset($_POST['insertar'])) {
+	if (isset($_POST['submit'])) {
+
 		$noticia->setTitular($_POST['titular_noticia']);
 		$noticia->setEntrada($_POST['entrada_noticia']);
+		$noticia->setRuta(addslashes(file_get_contents($_FILES['ruta_imagen']['tmp_name'])));
 
 		//llama a la función insertar definida en el crud
 		$crud->insertar($noticia);
-		header('Location: index.php');
+		header('Location: ../../noticias/noticiasAdmin.php');
 	// si el elemento de la vista con nombre actualizar no viene nulo, llama al crud y actualiza el noticia
 	}elseif(isset($_POST['actualizar'])){
 		$noticia->setCodigo($_POST['cod_noticia']);

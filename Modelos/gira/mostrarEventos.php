@@ -70,7 +70,7 @@ foreach ($listaEventos as $evento)
     <li class="w3-light-grey w3-padding-24"><?php echo $evento->getDescripcion() ?></li>
           <li class="w3-black w3-xlarge w3-padding-32"> $ <?php echo $evento->getValor()?> USD. </li>
           <li  class="w3-black w3-xlarge w3-padding-32">
-      <a class="w3-light-grey w3-padding-24" href="#" class="btn btn-default producto" precio="<?php echo $evento->getValor() ?>" nombre="<?php echo $evento->getNombre() ?>" role="button">Comprar Ticket</a>
+      <a href="#" class="btn btn-default producto" precio="<?php echo $evento->getValor() ?>" nombre="<?php echo $evento->getNombre() ?>" role="button">Comprar Ticket</a>
     </li>
     </li>
   </ul>
