@@ -24,8 +24,14 @@ $listaEventos = $crud->mostrarEventos($codGira);
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.min.css">
+    <script src="bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  
+
 <style>
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
@@ -64,7 +70,10 @@ foreach ($listaEventos as $evento)
     <li class="w3-light-grey w3-padding-24"><?php echo $evento->getDescripcion() ?></li>
     <li class="w3-padding-16">imagen</li>
     <li class="w3-light-grey w3-padding-24">
-      <a class= "w3-button w3-blue-grey w3-padding-large 	fa fa-eye" href="mostrar_productos.php?cod_categoria=1">  Comprar Tickets</a>
+
+          <li class="w3-black w3-xlarge w3-padding-32"> $ <?php echo $evento->getValor()?> USD. </li>
+
+      <a href="#" class="btn btn-default producto" precio="<?php echo $evento->getValor() ?>" nombre="<?php echo $evento->getNombre() ?>" role="button">Comprar Ticket</a>
 
     </li>
   </ul>
@@ -78,6 +87,32 @@ foreach ($listaEventos as $evento)
 </div>
   </div>
 </div>
+
+<script src="minicart.js"></script>
+  <script>
+    // configuración inicial del carrito
+    paypal.minicart.render({
+    strings:{
+      button:'Pagar'
+     ,buttonAlt: "Total"
+     ,subtotal: 'Total:'
+     ,empty: 'No hay productos en el carrito'
+    }
+    });
+    // Eventos para agregar productos al carrito
+
+     $('.producto').click(function(e){
+         e.stopPropagation();
+        paypal.minicart.cart.add({
+      business: 'badbunny@gmail.com', // Cuenta paypal para recibir el dinero
+      item_name: $(this).attr("nombre"),
+       amount: $(this).attr("precio"),
+       currency_code: 'USD',
+
+      });
+     });
+
+  </script>
 
 </body>
 </html>

@@ -172,20 +172,34 @@ require_once("ciudad.php");
 		{
 			$db = Db::conectar();
 <<<<<<< HEAD
+<<<<<<< Updated upstream
 			$insert = $db->prepare('INSERT INTO evento(cod_gira, cod_ciudad, nom_evento, descripcion_evento, valor_evento) values(:cod_gira, :cod_ciudad, :nom_evento,:descripcion_evento, :valor_evento)');
 =======
+=======
+>>>>>>> Stashed changes
 			$insert = $db->prepare('INSERT INTO evento(cod_gira, cod_ciudad, nom_evento, descripcion_evento) values(:cod_gira, :cod_ciudad, :nom_evento,:descripcion_evento)');
 >>>>>>> master
 
+=======
+			$insert = $db->prepare('INSERT INTO evento(cod_gira, cod_ciudad, nom_evento, descripcion_evento, valor_evento) values(:cod_gira, :cod_ciudad, :nom_evento,:descripcion_evento, :valor_evento)');
+			
+>>>>>>> master
 			$insert->bindValue('cod_gira',$evento->getCodigoGira());
 			$insert->bindValue('cod_ciudad',$evento->getCodigoCiudad());
 			$insert->bindValue('nom_evento',$evento->getNombre());
 			$insert->bindValue('descripcion_evento',$evento->getDescripcion());
 <<<<<<< HEAD
+<<<<<<< Updated upstream
 			$insert->bindValue('valor_evento', $evento->getValor());
 =======
 >>>>>>> master
+=======
+>>>>>>> Stashed changes
 
+=======
+			$insert->bindValue('valor_evento', $evento->getValor());
+			
+>>>>>>> master
 
 			$insert->execute();
 		}
