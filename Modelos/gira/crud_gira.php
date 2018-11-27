@@ -10,14 +10,10 @@ require_once("ciudad.php");
 		// constructor de la clase
 		public function __construct(){}
 
-		// método para insertar, recibe como parámetro un objeto de tipo noticia
+		// mÃ©todo para insertar, recibe como parÃ¡metro un objeto de tipo noticia
 		public function insertar($gira){
 			$db=Db::conectar();
-<<<<<<< HEAD
-			$insert=$db->prepare('INSERT INTO gira(cod_admin, nom_gira, descripcion_gira) values(1,:nom_gira,:descripcion_gira)');
-=======
 			$insert=$db->prepare('INSERT INTO gira(cod_admin, nom_gira, descripcion_gira, ruta_imagen) values(1,:nom_gira,:descripcion_gira,:ruta_imagen)');
->>>>>>> master
 
 			$insert->bindValue('nom_gira',$gira->getNombre());
 			$insert->bindValue('descripcion_gira',$gira->getDescripcion());
@@ -26,7 +22,7 @@ require_once("ciudad.php");
 
 		}
 
-		// método para mostrar todos las noticias
+		// mÃ©todo para mostrar todos las noticias
 		public function mostrar(){
 			$db=Db::conectar();
 			$listaGiras=[];
@@ -51,7 +47,7 @@ require_once("ciudad.php");
 			return $listaGiras;
 		}
 
-		// método para eliminar una noticia, recibe como parámetro el id de la noticia
+		// mÃ©todo para eliminar una noticia, recibe como parÃ¡metro el id de la noticia
 		public function eliminar($codigoGira){
 			$db=Db::conectar();
 			$eliminarEventos = $db->prepare('DELETE FROM evento where cod_gira=:cod_gira');
@@ -62,7 +58,6 @@ require_once("ciudad.php");
 			$eliminar->execute();
 		}
 
-
 		public function eliminarEvento($codEvento)
 		{
 			$db = Db::conectar();
@@ -71,7 +66,7 @@ require_once("ciudad.php");
 		    $eliminar->execute();
 		}
 
-		// método para buscar una noticia, recibe como parámetro el id de la noticia
+		// mÃ©todo para buscar una noticia, recibe como parÃ¡metro el id de la noticia
 		public function obtenerGira($codigoGira){
 			$db=Db::conectar();
 			$select=$db->prepare('SELECT * FROM gira WHERE cod_gira=:elCodigo');
@@ -106,7 +101,6 @@ require_once("ciudad.php");
 		     	$elEvento->setCodigoCiudad($registro['cod_ciudad']);
 		     	$elEvento->setNombre($registro['nom_evento']);
 		     	$elEvento->setDescripcion($registro['descripcion_evento']);
-		     	$elEvento->setValor($registro['valor_evento']);
 		     	$elEvento->setFecha($registro['fecha_evento']);
 
 		     	$listaEventos[] = $elEvento;
@@ -141,7 +135,7 @@ require_once("ciudad.php");
 		     return $listaGiras;
 		}
 
-		// método para actualizar un noticia, recibe como parámetro la noticia
+		// mÃ©todo para actualizar un noticia, recibe como parÃ¡metro la noticia
 		public function actualizar($gira){
 			$db=Db::conectar();
 	        $actualizar=$db->prepare('UPDATE gira SET nom_gira=:nom_gira,descripcion_gira=:descripcion_gira,ruta_imagen=:ruta_imagen  WHERE cod_gira=:cod_gira');
@@ -157,12 +151,11 @@ require_once("ciudad.php");
 		public function actualizarEvento($evento)
 		{
 			$db = Db::conectar();
-			$actualizar = $db->prepare('UPDATE evento set  cod_gira =:cod_gira, cod_ciudad =:cod_ciudad, nom_evento=:nom_evento, descripcion_evento=:descripcion_evento, valor_evento =:valor_evento, fecha_evento=:fecha_evento WHERE cod_evento =:cod_evento');
+			$actualizar = $db->prepare('UPDATE evento set  cod_gira =:cod_gira, cod_ciudad =:cod_ciudad, nom_evento=:nom_evento, descripcion_evento=:descripcion_evento, fecha_evento=:fecha_evento WHERE cod_evento =:cod_evento');
 			$actualizar->bindValue('cod_gira', $evento->getCodigoGira());
 			$actualizar->bindValue('cod_ciudad', $evento->getCodigoCiudad());
 			$actualizar->bindValue('nom_evento', $evento->getNombre());
 			$actualizar->bindValue('descripcion_evento', $evento->getDescripcion());
-			$actualizar->bindValue('valor_evento', $evento->getValor());
 			$actualizar->bindValue('fecha_evento', $evento->getFecha());
 			$actualizar->bindValue('cod_evento', $evento->getCodigoEvento());
 			$actualizar->execute();
@@ -171,35 +164,13 @@ require_once("ciudad.php");
 		public function insertarEvento($evento)
 		{
 			$db = Db::conectar();
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-			$insert = $db->prepare('INSERT INTO evento(cod_gira, cod_ciudad, nom_evento, descripcion_evento, valor_evento) values(:cod_gira, :cod_ciudad, :nom_evento,:descripcion_evento, :valor_evento)');
-=======
-=======
->>>>>>> Stashed changes
 			$insert = $db->prepare('INSERT INTO evento(cod_gira, cod_ciudad, nom_evento, descripcion_evento) values(:cod_gira, :cod_ciudad, :nom_evento,:descripcion_evento)');
->>>>>>> master
 
-=======
-			$insert = $db->prepare('INSERT INTO evento(cod_gira, cod_ciudad, nom_evento, descripcion_evento, valor_evento) values(:cod_gira, :cod_ciudad, :nom_evento,:descripcion_evento, :valor_evento)');
-			
->>>>>>> master
 			$insert->bindValue('cod_gira',$evento->getCodigoGira());
 			$insert->bindValue('cod_ciudad',$evento->getCodigoCiudad());
 			$insert->bindValue('nom_evento',$evento->getNombre());
 			$insert->bindValue('descripcion_evento',$evento->getDescripcion());
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-			$insert->bindValue('valor_evento', $evento->getValor());
-=======
->>>>>>> master
-=======
->>>>>>> Stashed changes
 
-=======
-			$insert->bindValue('valor_evento', $evento->getValor());
-			
->>>>>>> master
 
 			$insert->execute();
 		}
@@ -220,13 +191,11 @@ require_once("ciudad.php");
 				$elEvento->setCodigoCiudad($evento['cod_ciudad']);
 				$elEvento->setNombre($evento['nom_evento']);
 				$elEvento->setDescripcion($evento['descripcion_evento']);
-				$elEvento->setValor($evento['valor_evento']);
 			    $elEvento->setFecha($evento['fecha_evento']);
 
 
 				$listaEventos[]=$elEvento;
 			}
-			
 			return $listaEventos;
 		}
 
@@ -243,8 +212,6 @@ require_once("ciudad.php");
 			$elEvento->setCodigoCiudad($registro['cod_ciudad']);
 			$elEvento->setNombre($registro['nom_evento']);
 			$elEvento->setDescripcion($registro['descripcion_evento']);
-			$elEvento->setValor($registro['valor_evento']);
-
 			$elEvento->setFecha($registro['fecha_evento']);
 
 			return $elEvento;
