@@ -14,7 +14,7 @@ require_once("ciudad.php");
 		public function insertar($gira){
 			$db=Db::conectar();
 			$insert=$db->prepare('INSERT INTO gira(cod_admin, nom_gira, descripcion_gira) values(1,:nom_gira,:descripcion_gira)');
-			
+
 			$insert->bindValue('nom_gira',$gira->getNombre());
 			$insert->bindValue('descripcion_gira',$gira->getDescripcion());
 			$insert->execute();
@@ -122,7 +122,7 @@ require_once("ciudad.php");
 		     {
 
 		     	$laGira = new Gira();
-		     	
+
 		     	$laGira->setCodigoGira($registro['cod_gira']);
 		     	$laGira->setCodigoAdmin($registro['cod_admin']);
 		     	$laGira->setNombre($registro['nom_gira']);
@@ -145,7 +145,7 @@ require_once("ciudad.php");
 			$actualizar->bindValue('ruta_imagen',$gira->getRuta());
 			$actualizar->bindValue('cod_gira',$gira->getCodigoGira());
 
-			
+
 			$actualizar->execute();
 		}
 
@@ -167,13 +167,13 @@ require_once("ciudad.php");
 		{
 			$db = Db::conectar();
 			$insert = $db->prepare('INSERT INTO evento(cod_gira, cod_ciudad, nom_evento, descripcion_evento, valor_evento) values(:cod_gira, :cod_ciudad, :nom_evento,:descripcion_evento, :valor_evento)');
-			
+
 			$insert->bindValue('cod_gira',$evento->getCodigoGira());
 			$insert->bindValue('cod_ciudad',$evento->getCodigoCiudad());
 			$insert->bindValue('nom_evento',$evento->getNombre());
 			$insert->bindValue('descripcion_evento',$evento->getDescripcion());
 			$insert->bindValue('valor_evento', $evento->getValor());
-			
+
 
 			$insert->execute();
 		}
@@ -196,10 +196,11 @@ require_once("ciudad.php");
 				$elEvento->setDescripcion($evento['descripcion_evento']);
 				$elEvento->setValor($evento['valor_evento']);
 			    $elEvento->setFecha($evento['fecha_evento']);
-			    
+
 
 				$listaEventos[]=$elEvento;
 			}
+			
 			return $listaEventos;
 		}
 
@@ -229,7 +230,7 @@ require_once("ciudad.php");
 			$db = Db::conectar();
 			$select = $db->prepare('SELECT * from ciudad');
 			$select->execute();
-			foreach ($select->fetchAll() as $registroCiudad) 
+			foreach ($select->fetchAll() as $registroCiudad)
 			{
 				$laCiudad = new Ciudad();
 				$laCiudad->setCodigoCiudad($registroCiudad['cod_ciudad']);
