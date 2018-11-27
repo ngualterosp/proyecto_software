@@ -143,6 +143,11 @@ $crud = new CrudProducto();
 			<input id="nombre" placeholder="Nombre categoria" name="nombre" class="element text medium form-control" type="text" maxlength="255" value="" required/>
 		</div>
 		</li>
+    <li id="li_4">
+      <div>
+        <input type="file" required name="ruta_imagen"/>
+      </div>
+    </li>
 
 				<center>
 			  <input type="hidden" name="form_id" value="35166" />
