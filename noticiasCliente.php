@@ -16,7 +16,7 @@
     <?php foreach ($link->query('SELECT * FROM noticia ORDER BY cod_noticia DESC LIMIT 2,1') as $row2){?>
 <div class="w3-row w3-margin">
 <div class="w3-third">
-  <img src="img/noticia3.jpg" style="width:100%;min-height:200px">
+  <img src="data:image/jpg;base64, <?php echo base64_encode(stripslashes($row['ruta_imagen'])); ?>" style="width:100%;min-height:200px">
 </div>
 <div class="w3-twothird w3-container">
   <center><h1><?php echo $row['titular_noticia'] ?></h1></center>
@@ -34,13 +34,13 @@
   </p>
 </div>
 <div class="w3-third">
-  <img src="img/noticia1.jpg" style="width:100%;min-height:200px">
+  <img src="data:image/jpg;base64, <?php echo base64_encode(stripslashes($row1['ruta_imagen'])); ?>" style="width:100%;min-height:200px">
 </div>
 </div>
 
 <div class="w3-row w3-margin">
 <div class="w3-third">
-  <img src="img/noticia2.jpg" style="width:100%;min-height:200px">
+  <img src="data:image/jpg;base64, <?php echo base64_encode(stripslashes($row2['ruta_imagen'])); ?>" style="width:100%;min-height:200px">
 </div>
 <div class="w3-twothird w3-container">
   <center><h1><?php echo $row2['titular_noticia'] ?></h1></center>

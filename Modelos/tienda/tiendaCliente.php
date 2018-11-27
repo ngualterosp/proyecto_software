@@ -48,7 +48,7 @@ body, html {height: 100%}
 <div class="w3-third w3-margin-bottom">
   <ul class="w3-ul w3-border w3-center w3-hover-shadow">
     <li class="w3-black w3-xlarge w3-padding-32"><?php echo $categoria->getNombre() ?></li>
-    <li class="w3-padding-16"><img src="../../img/categorias1.png" width="100%"></li>
+    <li class="w3-padding-16"><img src="data:image/jpg;base64, <?php echo base64_encode(stripslashes($categoria->getRuta())); ?>" width="100%"></li>
     <li class="w3-light-grey w3-padding-24">
       <a class= "w3-button w3-blue-grey w3-padding-large 	fa fa-eye" href="mostrar_productos.php?cod_categoria=<?php echo $categoria->getCodigoCategoria() ?>">  Ver Productos</a>
 
